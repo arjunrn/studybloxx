@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="menu_refresh_notes">Refresh</string>
+    <string name="menu_quick_add_note">Add Note</string>
+    <string name="menu_logout">Logout</string>
+    <string name="edit_note_actionbar">Edit Note</string>
+    <string name="discard_note_actionbar">Discard Note</string>
+
+</resources>

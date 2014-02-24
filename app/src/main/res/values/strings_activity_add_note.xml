@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="add_activity_note_title">Note Title</string>
+    <string name="add_activity_note_content">Note Content</string>
+    <string name="add_activity_save_note">Save</string>
+    <string name="add_activity_attach_image">Attach Image</string>
+    <string name="add_activity_cancel_note">Cancel</string>
+    <string name="comfirm_dialog_title">Confirm</string>
+    <string name="comfirm_dialog_content">Are you sure you want to add a note with no title?</string>
+    <string name="confirm_dialog_positive">OK</string>
+    <string name="confirm_dialog_negative">Cancel</string>
+    <string name="add_course_confirm">Add Course</string>
+    <string name="add_course_cancel">Cancel</string>
+    <string name="add_course_title">Add Course</string>
+
+</resources>

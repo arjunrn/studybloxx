@@ -1,0 +1,61 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".AddNoteActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Spinner
+            android:id="@+id/note_course_selector"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/add_course_button"
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+            android:layout_gravity="center_vertical"
+            android:background="@android:drawable/list_selector_background"
+            android:padding="30sp"
+            android:src="@drawable/ic_action_new_dark" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/add_note_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:enabled="false"
+        android:fontFamily="sans-serif-light"
+        android:hint="@string/add_activity_note_title"
+        android:inputType="textAutoComplete" />
+
+    <EditText
+        android:id="@+id/add_note_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:enabled="false"
+        android:fontFamily="sans-serif-light"
+        android:gravity="top"
+        android:hint="@string/add_activity_note_content"
+        android:inputType="textMultiLine"
+        android:minHeight="100sp" >
+
+        <requestFocus />
+    </EditText>
+
+</LinearLayout>

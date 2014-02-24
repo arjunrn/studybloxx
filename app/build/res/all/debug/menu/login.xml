@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/action_forgot_password"
+        android:showAsAction="never"
+        android:title="@string/action_forgot_password"/>
+    <item
+        android:id="@+id/action_registration"
+        android:showAsAction="never"
+        android:title="@string/action_registration"/>
+
+</menu><!-- From: file:/Users/arjunnaik/studybloxx/app/src/main/res/menu/login.xml -->

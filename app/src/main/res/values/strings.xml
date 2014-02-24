@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Studybloxx</string>
+    <string name="title_lecture_detail">Lecture Detail</string>
+    <string name="title_activity_login_check">Studybloxx</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="action_search">Search</string>
+
+    <!-- Registration Activity String -->
+    <string name="title_activity_registration_check">Registration</string>
+    <string name="prompt_reenter_password">Re-Enter Password</string>
+    <string name="title_activity_add_note">Add Note</string>
+    <string name="hello_world">Hello world!</string>
+
+    <!-- Navigation Drawer Strings -->
+    <string name="drawer_open">Open Course List</string>
+    <string name="drawer_close">Close Course List</string>
+    <string name="app_not_available"> Not Available</string>
+
+</resources>

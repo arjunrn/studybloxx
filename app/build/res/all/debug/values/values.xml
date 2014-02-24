@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- From: file:/Users/arjunnaik/studybloxx/app/src/main/res/values/attrs.xml -->
+    <eat-comment />
+
+    <declare-styleable name="TabWidget">
+
+        <!-- Drawable used to draw the divider between tabs. -->
+        <attr name="divider" format="reference" />
+        <!-- Determines whether the strip under the tab indicators is drawn or not. -->
+        <attr name="tabStripEnabled" format="boolean" />
+        <!-- Drawable used to draw the left part of the strip underneath the tabs. -->
+        <attr name="tabStripLeft" format="reference" />
+        <!-- Drawable used to draw the right part of the strip underneath the tabs. -->
+        <attr name="tabStripRight" format="reference" />
+        <!-- Layout used to organize each tab's content. -->
+        <attr name="tabLayout" format="reference" />
+    </declare-styleable>
+    <!-- From: file:/Users/arjunnaik/studybloxx/app/src/main/res/values/dimens.xml -->
+    <eat-comment />
+
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="tab_host_default_height">48dp</dimen>
+    <!-- From: file:/Users/arjunnaik/studybloxx/app/src/main/res/values/strings_activity_login.xml -->
+    <eat-comment />
+
+    <string name="action_forgot_password">Recover lost password</string>
+    <string name="action_registration">Register</string>
+    <!-- From: file:/Users/arjunnaik/studybloxx/app/src/main/res/values/strings.xml -->
+    <eat-comment />
+
+    <string name="action_search">Search</string>
+    <string name="action_settings">Settings</string>
+    <!-- From: file:/Users/arjunnaik/studybloxx/app/src/main/res/values/strings_activity_login.xml -->
+    <eat-comment />
+
+    <string name="action_sign_in_register">Login</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <!-- From: file:/Users/arjunnaik/studybloxx/app/src/main/res/values/strings_activity_add_note.xml -->
+    <eat-comment />
+
+    <string name="add_activity_attach_image">Attach Image</string>
+    <string name="add_activity_cancel_note">Cancel</string>
+    <string name="add_activity_note_content">Note Content</string>
+    <string name="add_activity_note_title">Note Title</string>
+    <string name="add_activity_save_note">Save</string>
+    <string name="add_course_cancel">Cancel</string>
+    <string name="add_course_confirm">Add Course</string>
+    <string name="add_course_title">Add Course</string>
+    <!-- From: file:/Users/arjunnaik/studybloxx/app/src/main/res/values/strings.xml -->
+    <eat-comment />
+
+    <string name="app_name">Studybloxx</string>
+    <string name="app_not_available"> Not Available</string>
+    <!-- From: file:/Users/arjunnaik/studybloxx/app/src/main/res/values/strings_activity_add_note.xml -->
+    <eat-comment />
+
+    <string name="comfirm_dialog_content">Are you sure you want to add a note with no title?</string>
+    <string name="comfirm_dialog_title">Confirm</string>
+    <string name="confirm_dialog_negative">Cancel</string>
+    <string name="confirm_dialog_positive">OK</string>
+    <!-- From: file:/Users/arjunnaik/studybloxx/app/src/main/res/values/menu_quick_add_note.xml -->
+    <eat-comment />
+
+    <string name="discard_note_actionbar">Discard Note</string>
+    <!-- From: file:/Users/arjunnaik/studybloxx/app/src/main/res/values/strings.xml -->
+    <eat-comment />
+
+    <string name="drawer_close">Close Course List</string>
+    <string name="drawer_open">Open Course List</string>
+    <!-- From: file:/Users/arjunnaik/studybloxx/app/src/main/res/values/menu_quick_add_note.xml -->
+    <eat-comment />
+
+    <string name="edit_note_actionbar">Edit Note</string>
+    <!-- From: file:/Users/arjunnaik/studybloxx/app/src/main/res/values/strings_activity_login.xml -->
+    <eat-comment />
+
+    <string name="error_field_required">This field is required</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <!-- From: file:/Users/arjunnaik/studybloxx/app/src/main/res/values/strings.xml -->
+    <eat-comment />
+
+    <string name="hello_world">Hello world!</string>
+    <!-- From: file:/Users/arjunnaik/studybloxx/app/src/main/res/values/strings_activity_login.xml -->
+    <eat-comment />
+
+    <string name="login_progress_signing_in">Signing in…</string>
+    <!-- From: file:/Users/arjunnaik/studybloxx/app/src/main/res/values/menu_quick_add_note.xml -->
+    <eat-comment />
+
+    <string name="menu_logout">Logout</string>
+    <string name="menu_quick_add_note">Add Note</string>
+    <string name="menu_refresh_notes">Refresh</string>
+    <!-- From: file:/Users/arjunnaik/studybloxx/app/src/main/res/values/strings_activity_login.xml -->
+    <eat-comment />
+
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <!-- From: file:/Users/arjunnaik/studybloxx/app/src/main/res/values/strings.xml -->
+    <eat-comment />
+
+    <string name="prompt_reenter_password">Re-Enter Password</string>
+    <string name="title_activity_add_note">Add Note</string>
+    <!-- From: file:/Users/arjunnaik/studybloxx/app/src/main/res/values/strings_activity_login.xml -->
+    <eat-comment />
+
+    <string name="title_activity_login">Login</string>
+    <!-- From: file:/Users/arjunnaik/studybloxx/app/src/main/res/values/strings.xml -->
+    <eat-comment />
+
+    <string name="title_activity_login_check">Studybloxx</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_registration_check">Registration</string>
+    <string name="title_lecture_detail">Lecture Detail</string>
+    <!-- From: file:/Users/arjunnaik/studybloxx/app/src/main/res/values/styles_studybloxx.xml -->
+    <eat-comment />
+
+    <style name="ActionBar.Solid.Studybloxx" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@drawable/ab_solid_studybloxx</item>
+        <item name="android:backgroundStacked">@drawable/ab_stacked_solid_studybloxx</item>
+        <item name="android:backgroundSplit">@drawable/ab_bottom_solid_studybloxx</item>
+        <item name="android:progressBarStyle">@style/ProgressBar.Studybloxx</item>
+    </style>
+
+    <style name="ActionBar.Transparent.Studybloxx" parent="@android:style/Widget.Holo.ActionBar">
+        <item name="android:background">@drawable/ab_transparent_studybloxx</item>
+        <item name="android:progressBarStyle">@style/ProgressBar.Studybloxx</item>
+    </style>
+
+    <style name="ActionBarTabStyle.Studybloxx" parent="@android:style/Widget.Holo.ActionBar.TabView">
+        <item name="android:background">@drawable/tab_indicator_ab_studybloxx</item>
+    </style>
+
+    <style name="ActionButton.CloseMode.Studybloxx" parent="@android:style/Widget.Holo.ActionButton.CloseMode">
+        <item name="android:background">@drawable/btn_cab_done_studybloxx</item>
+    </style>
+    <!-- From: file:/Users/arjunnaik/studybloxx/app/src/main/res/values/styles.xml -->
+    <eat-comment />
+
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+    <!-- From: file:/Users/arjunnaik/studybloxx/app/src/main/res/values/styles_studybloxx.xml -->
+    <eat-comment />
+
+    <style name="DropDownListView.Studybloxx" parent="@android:style/Widget.Holo.ListView.DropDown">
+        <item name="android:listSelector">@drawable/selectable_background_studybloxx</item>
+    </style>
+
+    <style name="DropDownNav.Studybloxx" parent="@android:style/Widget.Holo.Spinner">
+        <item name="android:background">@drawable/spinner_background_ab_studybloxx</item>
+        <item name="android:popupBackground">@drawable/menu_dropdown_panel_studybloxx</item>
+        <item name="android:dropDownSelector">@drawable/selectable_background_studybloxx</item>
+    </style>
+    <!-- From: file:/Users/arjunnaik/studybloxx/app/src/main/res/values/styles.xml -->
+    <eat-comment />
+
+    <style name="LoginFormContainer">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">16dp</item>
+    </style>
+    <!-- From: file:/Users/arjunnaik/studybloxx/app/src/main/res/values/styles_studybloxx.xml -->
+    <eat-comment />
+
+    <style name="PopupMenu.Studybloxx" parent="@android:style/Widget.Holo.ListPopupWindow">
+        <item name="android:popupBackground">@drawable/menu_dropdown_panel_studybloxx</item>
+    </style>
+
+    <style name="ProgressBar.Studybloxx" parent="@android:style/Widget.Holo.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/progress_horizontal_studybloxx</item>
+    </style>
+
+    <style name="Theme.Studybloxx" parent="@android:style/Theme.Holo.Light.DarkActionBar">
+        <item name="android:actionBarItemBackground">@drawable/selectable_background_studybloxx</item>
+        <item name="android:popupMenuStyle">@style/PopupMenu.Studybloxx</item>
+        <item name="android:dropDownListViewStyle">@style/DropDownListView.Studybloxx</item>
+        <item name="android:actionBarTabStyle">@style/ActionBarTabStyle.Studybloxx</item>
+        <item name="android:actionDropDownStyle">@style/DropDownNav.Studybloxx</item>
+        <item name="android:actionBarStyle">@style/ActionBar.Solid.Studybloxx</item>
+        <item name="android:actionModeBackground">@drawable/cab_background_top_studybloxx</item>
+        <item name="android:actionModeSplitBackground">@drawable/cab_background_bottom_studybloxx</item>
+        <item name="android:actionModeCloseButtonStyle">@style/ActionButton.CloseMode.Studybloxx</item>
+
+        <!-- Light.DarkActionBar specific -->
+        <item name="android:actionBarWidgetTheme">@style/Theme.Studybloxx.Widget</item>
+    </style>
+
+    <style name="Theme.Studybloxx.Widget" parent="@android:style/Theme.Holo">
+        <item name="android:popupMenuStyle">@style/PopupMenu.Studybloxx</item>
+        <item name="android:dropDownListViewStyle">@style/DropDownListView.Studybloxx</item>
+    </style>
+
+</resources>

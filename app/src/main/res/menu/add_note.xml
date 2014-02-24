@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/action_cancel_note"
+        android:icon="@drawable/ic_action_cancel"
+        android:showAsAction="always"
+        android:title="@string/add_activity_cancel_note"/>
+    
+    <item
+        android:id="@+id/action_add_img"
+        android:icon="@drawable/ic_action_camera"
+        android:showAsAction="always"
+        android:title="@string/add_activity_attach_image"/>
+    <item
+        android:id="@+id/action_save_note"
+        android:icon="@drawable/ic_action_accept"
+        android:showAsAction="always"
+        android:title="@string/add_activity_save_note"/>
+
+</menu>

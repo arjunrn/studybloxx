@@ -15,4 +15,4 @@
         tools:listitem="@layout/notes_list_item" >
     </ListView>
 
-</LinearLayout><!-- From: file:/Users/arjunnaik/studybloxx/app/src/main/res/layout/fragment_note_list.xml -->
+</LinearLayout><!-- From: file:/home/arjun/Documents/studybloxx/app/src/main/res/layout/fragment_note_list.xml -->

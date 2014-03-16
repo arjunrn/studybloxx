@@ -2,970 +2,222 @@
 <merger>
 
     <dataSet config="main" >
-        <source path="/Users/arjunnaik/studybloxx/app/src/main/res" >
-            <file
-                name="ab_background_textured_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable/ab_background_textured_studybloxx.xml"
-                qualifiers=""
-                type="drawable" />
-            <file
-                name="btn_cab_done_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable/btn_cab_done_studybloxx.xml"
-                qualifiers=""
-                type="drawable" />
-            <file
-                name="card_bg"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable/card_bg.xml"
-                qualifiers=""
-                type="drawable" />
-            <file
-                name="progress_horizontal_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable/progress_horizontal_studybloxx.xml"
-                qualifiers=""
-                type="drawable" />
-            <file
-                name="selectable_background_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable/selectable_background_studybloxx.xml"
-                qualifiers=""
-                type="drawable" />
-            <file
-                name="spinner_background_ab_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable/spinner_background_ab_studybloxx.xml"
-                qualifiers=""
-                type="drawable" />
-            <file
-                name="tab_indicator_ab_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable/tab_indicator_ab_studybloxx.xml"
-                qualifiers=""
-                type="drawable" />
-            <file
-                name="ab_bottom_solid_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-hdpi/ab_bottom_solid_studybloxx.9.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="ab_solid_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-hdpi/ab_solid_studybloxx.9.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="ab_stacked_solid_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-hdpi/ab_stacked_solid_studybloxx.9.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="ab_texture_tile_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-hdpi/ab_texture_tile_studybloxx.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="ab_transparent_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-hdpi/ab_transparent_studybloxx.9.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="btn_cab_done_default_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-hdpi/btn_cab_done_default_studybloxx.9.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="btn_cab_done_focused_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-hdpi/btn_cab_done_focused_studybloxx.9.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="btn_cab_done_pressed_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-hdpi/btn_cab_done_pressed_studybloxx.9.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="cab_background_bottom_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-hdpi/cab_background_bottom_studybloxx.9.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="cab_background_top_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-hdpi/cab_background_top_studybloxx.9.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="drawer_shadow"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-hdpi/drawer_shadow.9.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="ic_action_accept"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-hdpi/ic_action_accept.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="ic_action_camera"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-hdpi/ic_action_camera.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="ic_action_cancel"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-hdpi/ic_action_cancel.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="ic_action_discard"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-hdpi/ic_action_discard.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="ic_action_edit"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-hdpi/ic_action_edit.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="ic_action_new"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-hdpi/ic_action_new.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="ic_action_new_dark"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-hdpi/ic_action_new_dark.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="ic_action_refresh"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-hdpi/ic_action_refresh.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="ic_action_search"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-hdpi/ic_action_search.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="ic_drawer"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-hdpi/ic_drawer.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="ic_launcher"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-hdpi/ic_launcher.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="list_focused_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-hdpi/list_focused_studybloxx.9.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="list_pressed_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-hdpi/list_pressed_studybloxx.9.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="menu_dropdown_panel_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-hdpi/menu_dropdown_panel_studybloxx.9.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="progress_bg_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-hdpi/progress_bg_studybloxx.9.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="progress_primary_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-hdpi/progress_primary_studybloxx.9.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="progress_secondary_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-hdpi/progress_secondary_studybloxx.9.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="spinner_ab_default_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-hdpi/spinner_ab_default_studybloxx.9.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="spinner_ab_disabled_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-hdpi/spinner_ab_disabled_studybloxx.9.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="spinner_ab_focused_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-hdpi/spinner_ab_focused_studybloxx.9.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="spinner_ab_pressed_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-hdpi/spinner_ab_pressed_studybloxx.9.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="tab_selected_focused_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-hdpi/tab_selected_focused_studybloxx.9.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="tab_selected_pressed_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-hdpi/tab_selected_pressed_studybloxx.9.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="tab_selected_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-hdpi/tab_selected_studybloxx.9.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="tab_unselected_focused_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-hdpi/tab_unselected_focused_studybloxx.9.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="tab_unselected_pressed_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-hdpi/tab_unselected_pressed_studybloxx.9.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="tab_unselected_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-hdpi/tab_unselected_studybloxx.9.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="ab_bottom_solid_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-mdpi/ab_bottom_solid_studybloxx.9.png"
-                qualifiers="mdpi"
-                type="drawable" />
-            <file
-                name="ab_solid_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-mdpi/ab_solid_studybloxx.9.png"
-                qualifiers="mdpi"
-                type="drawable" />
-            <file
-                name="ab_stacked_solid_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-mdpi/ab_stacked_solid_studybloxx.9.png"
-                qualifiers="mdpi"
-                type="drawable" />
-            <file
-                name="ab_texture_tile_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-mdpi/ab_texture_tile_studybloxx.png"
-                qualifiers="mdpi"
-                type="drawable" />
-            <file
-                name="ab_transparent_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-mdpi/ab_transparent_studybloxx.9.png"
-                qualifiers="mdpi"
-                type="drawable" />
-            <file
-                name="btn_cab_done_default_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-mdpi/btn_cab_done_default_studybloxx.9.png"
-                qualifiers="mdpi"
-                type="drawable" />
-            <file
-                name="btn_cab_done_focused_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-mdpi/btn_cab_done_focused_studybloxx.9.png"
-                qualifiers="mdpi"
-                type="drawable" />
-            <file
-                name="btn_cab_done_pressed_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-mdpi/btn_cab_done_pressed_studybloxx.9.png"
-                qualifiers="mdpi"
-                type="drawable" />
-            <file
-                name="cab_background_bottom_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-mdpi/cab_background_bottom_studybloxx.9.png"
-                qualifiers="mdpi"
-                type="drawable" />
-            <file
-                name="cab_background_top_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-mdpi/cab_background_top_studybloxx.9.png"
-                qualifiers="mdpi"
-                type="drawable" />
-            <file
-                name="drawer_shadow"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-mdpi/drawer_shadow.9.png"
-                qualifiers="mdpi"
-                type="drawable" />
-            <file
-                name="ic_action_accept"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-mdpi/ic_action_accept.png"
-                qualifiers="mdpi"
-                type="drawable" />
-            <file
-                name="ic_action_camera"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-mdpi/ic_action_camera.png"
-                qualifiers="mdpi"
-                type="drawable" />
-            <file
-                name="ic_action_cancel"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-mdpi/ic_action_cancel.png"
-                qualifiers="mdpi"
-                type="drawable" />
-            <file
-                name="ic_action_discard"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-mdpi/ic_action_discard.png"
-                qualifiers="mdpi"
-                type="drawable" />
-            <file
-                name="ic_action_edit"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-mdpi/ic_action_edit.png"
-                qualifiers="mdpi"
-                type="drawable" />
-            <file
-                name="ic_action_new"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-mdpi/ic_action_new.png"
-                qualifiers="mdpi"
-                type="drawable" />
-            <file
-                name="ic_action_new_dark"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-mdpi/ic_action_new_dark.png"
-                qualifiers="mdpi"
-                type="drawable" />
-            <file
-                name="ic_action_refresh"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-mdpi/ic_action_refresh.png"
-                qualifiers="mdpi"
-                type="drawable" />
-            <file
-                name="ic_action_search"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-mdpi/ic_action_search.png"
-                qualifiers="mdpi"
-                type="drawable" />
-            <file
-                name="ic_launcher"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-mdpi/ic_launcher.png"
-                qualifiers="mdpi"
-                type="drawable" />
-            <file
-                name="list_focused_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-mdpi/list_focused_studybloxx.9.png"
-                qualifiers="mdpi"
-                type="drawable" />
-            <file
-                name="list_pressed_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-mdpi/list_pressed_studybloxx.9.png"
-                qualifiers="mdpi"
-                type="drawable" />
-            <file
-                name="menu_dropdown_panel_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-mdpi/menu_dropdown_panel_studybloxx.9.png"
-                qualifiers="mdpi"
-                type="drawable" />
-            <file
-                name="progress_bg_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-mdpi/progress_bg_studybloxx.9.png"
-                qualifiers="mdpi"
-                type="drawable" />
-            <file
-                name="progress_primary_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-mdpi/progress_primary_studybloxx.9.png"
-                qualifiers="mdpi"
-                type="drawable" />
-            <file
-                name="progress_secondary_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-mdpi/progress_secondary_studybloxx.9.png"
-                qualifiers="mdpi"
-                type="drawable" />
-            <file
-                name="spinner_ab_default_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-mdpi/spinner_ab_default_studybloxx.9.png"
-                qualifiers="mdpi"
-                type="drawable" />
-            <file
-                name="spinner_ab_disabled_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-mdpi/spinner_ab_disabled_studybloxx.9.png"
-                qualifiers="mdpi"
-                type="drawable" />
-            <file
-                name="spinner_ab_focused_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-mdpi/spinner_ab_focused_studybloxx.9.png"
-                qualifiers="mdpi"
-                type="drawable" />
-            <file
-                name="spinner_ab_pressed_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-mdpi/spinner_ab_pressed_studybloxx.9.png"
-                qualifiers="mdpi"
-                type="drawable" />
-            <file
-                name="tab_selected_focused_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-mdpi/tab_selected_focused_studybloxx.9.png"
-                qualifiers="mdpi"
-                type="drawable" />
-            <file
-                name="tab_selected_pressed_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-mdpi/tab_selected_pressed_studybloxx.9.png"
-                qualifiers="mdpi"
-                type="drawable" />
-            <file
-                name="tab_selected_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-mdpi/tab_selected_studybloxx.9.png"
-                qualifiers="mdpi"
-                type="drawable" />
-            <file
-                name="tab_unselected_focused_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-mdpi/tab_unselected_focused_studybloxx.9.png"
-                qualifiers="mdpi"
-                type="drawable" />
-            <file
-                name="tab_unselected_pressed_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-mdpi/tab_unselected_pressed_studybloxx.9.png"
-                qualifiers="mdpi"
-                type="drawable" />
-            <file
-                name="tab_unselected_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-mdpi/tab_unselected_studybloxx.9.png"
-                qualifiers="mdpi"
-                type="drawable" />
-            <file
-                name="ab_bottom_solid_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xhdpi/ab_bottom_solid_studybloxx.9.png"
-                qualifiers="xhdpi"
-                type="drawable" />
-            <file
-                name="ab_solid_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xhdpi/ab_solid_studybloxx.9.png"
-                qualifiers="xhdpi"
-                type="drawable" />
-            <file
-                name="ab_stacked_solid_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xhdpi/ab_stacked_solid_studybloxx.9.png"
-                qualifiers="xhdpi"
-                type="drawable" />
-            <file
-                name="ab_texture_tile_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xhdpi/ab_texture_tile_studybloxx.png"
-                qualifiers="xhdpi"
-                type="drawable" />
-            <file
-                name="ab_transparent_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xhdpi/ab_transparent_studybloxx.9.png"
-                qualifiers="xhdpi"
-                type="drawable" />
-            <file
-                name="btn_cab_done_default_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xhdpi/btn_cab_done_default_studybloxx.9.png"
-                qualifiers="xhdpi"
-                type="drawable" />
-            <file
-                name="btn_cab_done_focused_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xhdpi/btn_cab_done_focused_studybloxx.9.png"
-                qualifiers="xhdpi"
-                type="drawable" />
-            <file
-                name="btn_cab_done_pressed_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xhdpi/btn_cab_done_pressed_studybloxx.9.png"
-                qualifiers="xhdpi"
-                type="drawable" />
-            <file
-                name="cab_background_bottom_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xhdpi/cab_background_bottom_studybloxx.9.png"
-                qualifiers="xhdpi"
-                type="drawable" />
-            <file
-                name="cab_background_top_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xhdpi/cab_background_top_studybloxx.9.png"
-                qualifiers="xhdpi"
-                type="drawable" />
-            <file
-                name="drawer_shadow"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xhdpi/drawer_shadow.9.png"
-                qualifiers="xhdpi"
-                type="drawable" />
-            <file
-                name="ic_action_accept"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xhdpi/ic_action_accept.png"
-                qualifiers="xhdpi"
-                type="drawable" />
-            <file
-                name="ic_action_camera"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xhdpi/ic_action_camera.png"
-                qualifiers="xhdpi"
-                type="drawable" />
-            <file
-                name="ic_action_cancel"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xhdpi/ic_action_cancel.png"
-                qualifiers="xhdpi"
-                type="drawable" />
-            <file
-                name="ic_action_discard"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xhdpi/ic_action_discard.png"
-                qualifiers="xhdpi"
-                type="drawable" />
-            <file
-                name="ic_action_edit"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xhdpi/ic_action_edit.png"
-                qualifiers="xhdpi"
-                type="drawable" />
-            <file
-                name="ic_action_new"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xhdpi/ic_action_new.png"
-                qualifiers="xhdpi"
-                type="drawable" />
-            <file
-                name="ic_action_new_dark"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xhdpi/ic_action_new_dark.png"
-                qualifiers="xhdpi"
-                type="drawable" />
-            <file
-                name="ic_action_refresh"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xhdpi/ic_action_refresh.png"
-                qualifiers="xhdpi"
-                type="drawable" />
-            <file
-                name="ic_action_search"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xhdpi/ic_action_search.png"
-                qualifiers="xhdpi"
-                type="drawable" />
-            <file
-                name="ic_launcher"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xhdpi/ic_launcher.png"
-                qualifiers="xhdpi"
-                type="drawable" />
-            <file
-                name="list_focused_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xhdpi/list_focused_studybloxx.9.png"
-                qualifiers="xhdpi"
-                type="drawable" />
-            <file
-                name="list_pressed_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xhdpi/list_pressed_studybloxx.9.png"
-                qualifiers="xhdpi"
-                type="drawable" />
-            <file
-                name="menu_dropdown_panel_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xhdpi/menu_dropdown_panel_studybloxx.9.png"
-                qualifiers="xhdpi"
-                type="drawable" />
-            <file
-                name="progress_bg_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xhdpi/progress_bg_studybloxx.9.png"
-                qualifiers="xhdpi"
-                type="drawable" />
-            <file
-                name="progress_primary_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xhdpi/progress_primary_studybloxx.9.png"
-                qualifiers="xhdpi"
-                type="drawable" />
-            <file
-                name="progress_secondary_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xhdpi/progress_secondary_studybloxx.9.png"
-                qualifiers="xhdpi"
-                type="drawable" />
-            <file
-                name="spinner_ab_default_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xhdpi/spinner_ab_default_studybloxx.9.png"
-                qualifiers="xhdpi"
-                type="drawable" />
-            <file
-                name="spinner_ab_disabled_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xhdpi/spinner_ab_disabled_studybloxx.9.png"
-                qualifiers="xhdpi"
-                type="drawable" />
-            <file
-                name="spinner_ab_focused_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xhdpi/spinner_ab_focused_studybloxx.9.png"
-                qualifiers="xhdpi"
-                type="drawable" />
-            <file
-                name="spinner_ab_pressed_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xhdpi/spinner_ab_pressed_studybloxx.9.png"
-                qualifiers="xhdpi"
-                type="drawable" />
-            <file
-                name="tab_selected_focused_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xhdpi/tab_selected_focused_studybloxx.9.png"
-                qualifiers="xhdpi"
-                type="drawable" />
-            <file
-                name="tab_selected_pressed_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xhdpi/tab_selected_pressed_studybloxx.9.png"
-                qualifiers="xhdpi"
-                type="drawable" />
-            <file
-                name="tab_selected_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xhdpi/tab_selected_studybloxx.9.png"
-                qualifiers="xhdpi"
-                type="drawable" />
-            <file
-                name="tab_unselected_focused_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xhdpi/tab_unselected_focused_studybloxx.9.png"
-                qualifiers="xhdpi"
-                type="drawable" />
-            <file
-                name="tab_unselected_pressed_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xhdpi/tab_unselected_pressed_studybloxx.9.png"
-                qualifiers="xhdpi"
-                type="drawable" />
-            <file
-                name="tab_unselected_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xhdpi/tab_unselected_studybloxx.9.png"
-                qualifiers="xhdpi"
-                type="drawable" />
-            <file
-                name="ab_bottom_solid_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xxhdpi/ab_bottom_solid_studybloxx.9.png"
-                qualifiers="xxhdpi"
-                type="drawable" />
-            <file
-                name="ab_solid_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xxhdpi/ab_solid_studybloxx.9.png"
-                qualifiers="xxhdpi"
-                type="drawable" />
-            <file
-                name="ab_stacked_solid_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xxhdpi/ab_stacked_solid_studybloxx.9.png"
-                qualifiers="xxhdpi"
-                type="drawable" />
-            <file
-                name="ab_texture_tile_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xxhdpi/ab_texture_tile_studybloxx.png"
-                qualifiers="xxhdpi"
-                type="drawable" />
-            <file
-                name="ab_transparent_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xxhdpi/ab_transparent_studybloxx.9.png"
-                qualifiers="xxhdpi"
-                type="drawable" />
-            <file
-                name="btn_cab_done_default_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xxhdpi/btn_cab_done_default_studybloxx.9.png"
-                qualifiers="xxhdpi"
-                type="drawable" />
-            <file
-                name="btn_cab_done_focused_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xxhdpi/btn_cab_done_focused_studybloxx.9.png"
-                qualifiers="xxhdpi"
-                type="drawable" />
-            <file
-                name="btn_cab_done_pressed_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xxhdpi/btn_cab_done_pressed_studybloxx.9.png"
-                qualifiers="xxhdpi"
-                type="drawable" />
-            <file
-                name="cab_background_bottom_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xxhdpi/cab_background_bottom_studybloxx.9.png"
-                qualifiers="xxhdpi"
-                type="drawable" />
-            <file
-                name="cab_background_top_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xxhdpi/cab_background_top_studybloxx.9.png"
-                qualifiers="xxhdpi"
-                type="drawable" />
-            <file
-                name="drawer_shadow"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xxhdpi/drawer_shadow.9.png"
-                qualifiers="xxhdpi"
-                type="drawable" />
-            <file
-                name="ic_action_accept"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xxhdpi/ic_action_accept.png"
-                qualifiers="xxhdpi"
-                type="drawable" />
-            <file
-                name="ic_action_camera"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xxhdpi/ic_action_camera.png"
-                qualifiers="xxhdpi"
-                type="drawable" />
-            <file
-                name="ic_action_cancel"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xxhdpi/ic_action_cancel.png"
-                qualifiers="xxhdpi"
-                type="drawable" />
-            <file
-                name="ic_action_discard"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xxhdpi/ic_action_discard.png"
-                qualifiers="xxhdpi"
-                type="drawable" />
-            <file
-                name="ic_action_edit"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xxhdpi/ic_action_edit.png"
-                qualifiers="xxhdpi"
-                type="drawable" />
-            <file
-                name="ic_action_new"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xxhdpi/ic_action_new.png"
-                qualifiers="xxhdpi"
-                type="drawable" />
-            <file
-                name="ic_action_new_dark"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xxhdpi/ic_action_new_dark.png"
-                qualifiers="xxhdpi"
-                type="drawable" />
-            <file
-                name="ic_action_refresh"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xxhdpi/ic_action_refresh.png"
-                qualifiers="xxhdpi"
-                type="drawable" />
-            <file
-                name="ic_action_search"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xxhdpi/ic_action_search.png"
-                qualifiers="xxhdpi"
-                type="drawable" />
-            <file
-                name="ic_launcher"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xxhdpi/ic_launcher.png"
-                qualifiers="xxhdpi"
-                type="drawable" />
-            <file
-                name="list_focused_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xxhdpi/list_focused_studybloxx.9.png"
-                qualifiers="xxhdpi"
-                type="drawable" />
-            <file
-                name="list_pressed_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xxhdpi/list_pressed_studybloxx.9.png"
-                qualifiers="xxhdpi"
-                type="drawable" />
-            <file
-                name="menu_dropdown_panel_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xxhdpi/menu_dropdown_panel_studybloxx.9.png"
-                qualifiers="xxhdpi"
-                type="drawable" />
-            <file
-                name="progress_bg_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xxhdpi/progress_bg_studybloxx.9.png"
-                qualifiers="xxhdpi"
-                type="drawable" />
-            <file
-                name="progress_primary_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xxhdpi/progress_primary_studybloxx.9.png"
-                qualifiers="xxhdpi"
-                type="drawable" />
-            <file
-                name="progress_secondary_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xxhdpi/progress_secondary_studybloxx.9.png"
-                qualifiers="xxhdpi"
-                type="drawable" />
-            <file
-                name="spinner_ab_default_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xxhdpi/spinner_ab_default_studybloxx.9.png"
-                qualifiers="xxhdpi"
-                type="drawable" />
-            <file
-                name="spinner_ab_disabled_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xxhdpi/spinner_ab_disabled_studybloxx.9.png"
-                qualifiers="xxhdpi"
-                type="drawable" />
-            <file
-                name="spinner_ab_focused_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xxhdpi/spinner_ab_focused_studybloxx.9.png"
-                qualifiers="xxhdpi"
-                type="drawable" />
-            <file
-                name="spinner_ab_pressed_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xxhdpi/spinner_ab_pressed_studybloxx.9.png"
-                qualifiers="xxhdpi"
-                type="drawable" />
-            <file
-                name="tab_selected_focused_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xxhdpi/tab_selected_focused_studybloxx.9.png"
-                qualifiers="xxhdpi"
-                type="drawable" />
-            <file
-                name="tab_selected_pressed_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xxhdpi/tab_selected_pressed_studybloxx.9.png"
-                qualifiers="xxhdpi"
-                type="drawable" />
-            <file
-                name="tab_selected_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xxhdpi/tab_selected_studybloxx.9.png"
-                qualifiers="xxhdpi"
-                type="drawable" />
-            <file
-                name="tab_unselected_focused_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xxhdpi/tab_unselected_focused_studybloxx.9.png"
-                qualifiers="xxhdpi"
-                type="drawable" />
-            <file
-                name="tab_unselected_pressed_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xxhdpi/tab_unselected_pressed_studybloxx.9.png"
-                qualifiers="xxhdpi"
-                type="drawable" />
-            <file
-                name="tab_unselected_studybloxx"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/drawable-xxhdpi/tab_unselected_studybloxx.9.png"
-                qualifiers="xxhdpi"
-                type="drawable" />
-            <file
-                name="activity_add_note"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/layout/activity_add_note.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="activity_login"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/layout/activity_login.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="activity_main"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/layout/activity_main.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="activity_note_detail"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/layout/activity_note_detail.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="activity_note_list"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/layout/activity_note_list.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="activity_note_twopane"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/layout/activity_note_twopane.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="activity_registration"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/layout/activity_registration.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="add_course_dialog"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/layout/add_course_dialog.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="fragment_note_detail"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/layout/fragment_note_detail.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="fragment_note_list"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/layout/fragment_note_list.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="navbar_list_item"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/layout/navbar_list_item.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="note_all"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/layout/note_all.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="note_list_drawer"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/layout/note_list_drawer.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="notes_list_item"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/layout/notes_list_item.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="add_note"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/menu/add_note.xml"
-                qualifiers=""
-                type="menu" />
-            <file
-                name="login"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/menu/login.xml"
-                qualifiers=""
-                type="menu" />
-            <file
-                name="login_check"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/menu/login_check.xml"
-                qualifiers=""
-                type="menu" />
-            <file
-                name="main"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/menu/main.xml"
-                qualifiers=""
-                type="menu" />
-            <file
-                name="note_detail_menu"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/menu/note_detail_menu.xml"
-                qualifiers=""
-                type="menu" />
-            <file
-                name="notes_list"
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/menu/notes_list.xml"
-                qualifiers=""
-                type="menu" />
-            <file
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/values/attrs.xml"
-                qualifiers="" >
-                <declare-styleable name="TabWidget" >
+        <source path="/home/arjun/Documents/studybloxx/app/src/main/res" >
+            <file
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/values-sw720dp-land/dimens.xml"
+                qualifiers="sw720dp-land" >
+                <dimen name="activity_horizontal_margin" >128dp
+                </dimen>
+            </file>
+            <file
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/values-v11/styles.xml"
+                qualifiers="v11" >
 
-                    <!-- Drawable used to draw the divider between tabs. -->
-                    <attr
-                        name="divider"
-                        format="reference" />
-                    <!-- Determines whether the strip under the tab indicators is drawn or not. -->
-                    <attr
-                        name="tabStripEnabled"
-                        format="boolean" />
-                    <!-- Drawable used to draw the left part of the strip underneath the tabs. -->
-                    <attr
-                        name="tabStripLeft"
-                        format="reference" />
-                    <!-- Drawable used to draw the right part of the strip underneath the tabs. -->
-                    <attr
-                        name="tabStripRight"
-                        format="reference" />
-                    <!-- Layout used to organize each tab's content. -->
-                    <attr
-                        name="tabLayout"
-                        format="reference" />
-                </declare-styleable>
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Holo.Light" >
+
+                    <!-- API 11 theme customizations can go here. -->
+                </style>
             </file>
             <file
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/values/dimens.xml"
-                qualifiers="" >
-                <dimen name="activity_horizontal_margin" >16dp
-                </dimen>
-                <dimen name="tab_host_default_height" >48dp
-                </dimen>
-                <dimen name="activity_vertical_margin" >16dp
-                </dimen>
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/values-v14/styles.xml"
+                qualifiers="v14" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Holo.Light.DarkActionBar" >
+
+                    <!-- API 14 theme customizations can go here. -->
+                </style>
             </file>
             <file
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/values/menu_quick_add_note.xml"
-                qualifiers="" >
-                <string name="edit_note_actionbar" >Edit Note
-                </string>
-                <string name="menu_refresh_notes" >Refresh
-                </string>
-                <string name="menu_quick_add_note" >Add Note
-                </string>
-                <string name="menu_logout" >Logout
-                </string>
-                <string name="discard_note_actionbar" >Discard Note
-                </string>
-            </file>
+                name="btn_cab_done_pressed_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xxhdpi/btn_cab_done_pressed_studybloxx.9.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
             <file
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/values/strings.xml"
-                qualifiers="" >
-                <string name="action_settings" >Settings
-                </string>
-                <string name="title_activity_main" >MainActivity
-                </string>
-                <string name="prompt_reenter_password" >Re-Enter Password
-                </string>
-                <string name="title_lecture_detail" >Lecture Detail
-                </string>
-                <string name="drawer_close" >Close Course List
-                </string>
-                <string name="title_activity_login_check" >Studybloxx
-                </string>
-                <string name="title_activity_add_note" >Add Note
-                </string>
-                <string name="app_name" >Studybloxx
-                </string>
-                <string name="action_search" >Search
-                </string>
-                <string name="title_activity_registration_check" >Registration
-                </string>
-                <string name="hello_world" >Hello world!
-                </string>
-                <string name="drawer_open" >Open Course List
-                </string>
-                <string name="app_not_available" > Not Available
-                </string>
-            </file>
+                name="tab_unselected_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xxhdpi/tab_unselected_studybloxx.9.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
             <file
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/values/strings_activity_add_note.xml"
+                name="tab_unselected_pressed_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xxhdpi/tab_unselected_pressed_studybloxx.9.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="spinner_ab_focused_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xxhdpi/spinner_ab_focused_studybloxx.9.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xxhdpi/ic_launcher.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="spinner_ab_default_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xxhdpi/spinner_ab_default_studybloxx.9.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_discard"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xxhdpi/ic_action_discard.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_camera"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xxhdpi/ic_action_camera.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="btn_cab_done_focused_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xxhdpi/btn_cab_done_focused_studybloxx.9.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="ab_bottom_solid_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xxhdpi/ab_bottom_solid_studybloxx.9.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="progress_primary_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xxhdpi/progress_primary_studybloxx.9.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="spinner_ab_disabled_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xxhdpi/spinner_ab_disabled_studybloxx.9.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="tab_selected_focused_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xxhdpi/tab_selected_focused_studybloxx.9.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_search"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xxhdpi/ic_action_search.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="progress_secondary_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xxhdpi/progress_secondary_studybloxx.9.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_new_dark"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xxhdpi/ic_action_new_dark.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_edit"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xxhdpi/ic_action_edit.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="ab_stacked_solid_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xxhdpi/ab_stacked_solid_studybloxx.9.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="list_focused_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xxhdpi/list_focused_studybloxx.9.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="tab_selected_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xxhdpi/tab_selected_studybloxx.9.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="menu_dropdown_panel_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xxhdpi/menu_dropdown_panel_studybloxx.9.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="spinner_ab_pressed_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xxhdpi/spinner_ab_pressed_studybloxx.9.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="ab_texture_tile_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xxhdpi/ab_texture_tile_studybloxx.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="list_pressed_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xxhdpi/list_pressed_studybloxx.9.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="ab_transparent_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xxhdpi/ab_transparent_studybloxx.9.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="tab_selected_pressed_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xxhdpi/tab_selected_pressed_studybloxx.9.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="tab_unselected_focused_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xxhdpi/tab_unselected_focused_studybloxx.9.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="progress_bg_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xxhdpi/progress_bg_studybloxx.9.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_refresh"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xxhdpi/ic_action_refresh.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="drawer_shadow"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xxhdpi/drawer_shadow.9.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="ab_solid_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xxhdpi/ab_solid_studybloxx.9.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="cab_background_bottom_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xxhdpi/cab_background_bottom_studybloxx.9.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="btn_cab_done_default_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xxhdpi/btn_cab_done_default_studybloxx.9.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_accept"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xxhdpi/ic_action_accept.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="cab_background_top_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xxhdpi/cab_background_top_studybloxx.9.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_cancel"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xxhdpi/ic_action_cancel.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_new"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xxhdpi/ic_action_new.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/values/strings_activity_add_note.xml"
                 qualifiers="" >
                 <string name="comfirm_dialog_title" >Confirm
                 </string>
@@ -993,62 +245,17 @@
                 </string>
             </file>
             <file
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/values/strings_activity_login.xml"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/values/dimens.xml"
                 qualifiers="" >
-                <string name="error_field_required" >This field is required
-                </string>
-                <string name="error_invalid_email" >This email address is invalid
-                </string>
-                <string name="login_progress_signing_in" >Signing in…
-                </string>
-                <string name="action_sign_in_register" >Login
-                </string>
-                <string name="prompt_email" >Email
-                </string>
-                <string name="action_sign_in_short" >Sign in
-                </string>
-                <string name="prompt_password" >Password
-                </string>
-                <string name="action_registration" >Register
-                </string>
-                <string name="error_incorrect_password" >This password is incorrect
-                </string>
-                <string name="action_forgot_password" >Recover lost password
-                </string>
-                <string name="title_activity_login" >Login
-                </string>
-                <string name="error_invalid_password" >This password is too short
-                </string>
+                <dimen name="activity_horizontal_margin" >16dp
+                </dimen>
+                <dimen name="tab_host_default_height" >48dp
+                </dimen>
+                <dimen name="activity_vertical_margin" >16dp
+                </dimen>
             </file>
             <file
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/values/styles.xml"
-                qualifiers="" >
-
-                <style
-                    name="AppBaseTheme"
-                    parent="android:Theme.Light" >
-
-                    <!--
-            Theme customizations available in newer API levels can go in
-            res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-                    -->
-                </style>
-
-                <style name="LoginFormContainer" >
-                    <item name="android:layout_width">
-match_parent
-                    </item>
-                    <item name="android:layout_height">
-wrap_content
-                    </item>
-                    <item name="android:padding">
-16dp
-                    </item>
-                </style>
-            </file>
-            <file
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/values/styles_studybloxx.xml"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/values/styles_studybloxx.xml"
                 qualifiers="" >
 
                 <style
@@ -1182,8 +389,539 @@ wrap_content
                 </style>
             </file>
             <file
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/values-large/refs.xml"
-                qualifiers="large" >
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/values/attrs.xml"
+                qualifiers="" >
+                <declare-styleable name="TabWidget" >
+
+                    <!-- Drawable used to draw the divider between tabs. -->
+                    <attr
+                        name="divider"
+                        format="reference" />
+                    <!-- Determines whether the strip under the tab indicators is drawn or not. -->
+                    <attr
+                        name="tabStripEnabled"
+                        format="boolean" />
+                    <!-- Drawable used to draw the left part of the strip underneath the tabs. -->
+                    <attr
+                        name="tabStripLeft"
+                        format="reference" />
+                    <!-- Drawable used to draw the right part of the strip underneath the tabs. -->
+                    <attr
+                        name="tabStripRight"
+                        format="reference" />
+                    <!-- Layout used to organize each tab's content. -->
+                    <attr
+                        name="tabLayout"
+                        format="reference" />
+                </declare-styleable>
+            </file>
+            <file
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/values/strings.xml"
+                qualifiers="" >
+                <string name="action_settings" >Settings
+                </string>
+                <string name="title_activity_main" >MainActivity
+                </string>
+                <string name="prompt_reenter_password" >Re-Enter Password
+                </string>
+                <string name="title_lecture_detail" >Lecture Detail
+                </string>
+                <string name="drawer_close" >Close Course List
+                </string>
+                <string name="title_activity_login_check" >Studybloxx
+                </string>
+                <string name="title_activity_add_note" >Add Note
+                </string>
+                <string name="app_name" >Studybloxx
+                </string>
+                <string name="action_search" >Search
+                </string>
+                <string name="title_activity_registration_check" >Registration
+                </string>
+                <string name="hello_world" >Hello world!
+                </string>
+                <string name="drawer_open" >Open Course List
+                </string>
+                <string name="app_not_available" > Not Available
+                </string>
+            </file>
+            <file
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/values/strings_activity_login.xml"
+                qualifiers="" >
+                <string name="error_field_required" >This field is required
+                </string>
+                <string name="error_invalid_email" >This email address is invalid
+                </string>
+                <string name="login_progress_signing_in" >Signing in…
+                </string>
+                <string name="action_sign_in_register" >Login
+                </string>
+                <string name="prompt_email" >Email
+                </string>
+                <string name="action_sign_in_short" >Sign in
+                </string>
+                <string name="prompt_password" >Password
+                </string>
+                <string name="action_registration" >Register
+                </string>
+                <string name="error_incorrect_password" >This password is incorrect
+                </string>
+                <string name="action_forgot_password" >Recover lost password
+                </string>
+                <string name="title_activity_login" >Login
+                </string>
+                <string name="error_invalid_password" >This password is too short
+                </string>
+            </file>
+            <file
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/values/styles.xml"
+                qualifiers="" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Light" >
+
+                    <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+                    -->
+                </style>
+
+                <style name="LoginFormContainer" >
+                    <item name="android:layout_width">
+match_parent
+                    </item>
+                    <item name="android:layout_height">
+wrap_content
+                    </item>
+                    <item name="android:padding">
+16dp
+                    </item>
+                </style>
+            </file>
+            <file
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/values/menu_quick_add_note.xml"
+                qualifiers="" >
+                <string name="edit_note_actionbar" >Edit Note
+                </string>
+                <string name="menu_refresh_notes" >Refresh
+                </string>
+                <string name="menu_quick_add_note" >Add Note
+                </string>
+                <string name="menu_logout" >Logout
+                </string>
+                <string name="discard_note_actionbar" >Discard Note
+                </string>
+            </file>
+            <file
+                name="btn_cab_done_pressed_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-mdpi/btn_cab_done_pressed_studybloxx.9.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="tab_unselected_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-mdpi/tab_unselected_studybloxx.9.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="tab_unselected_pressed_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-mdpi/tab_unselected_pressed_studybloxx.9.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="spinner_ab_focused_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-mdpi/spinner_ab_focused_studybloxx.9.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-mdpi/ic_launcher.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="spinner_ab_default_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-mdpi/spinner_ab_default_studybloxx.9.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_action_discard"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-mdpi/ic_action_discard.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_action_camera"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-mdpi/ic_action_camera.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="btn_cab_done_focused_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-mdpi/btn_cab_done_focused_studybloxx.9.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ab_bottom_solid_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-mdpi/ab_bottom_solid_studybloxx.9.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="progress_primary_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-mdpi/progress_primary_studybloxx.9.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="spinner_ab_disabled_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-mdpi/spinner_ab_disabled_studybloxx.9.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="tab_selected_focused_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-mdpi/tab_selected_focused_studybloxx.9.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_action_search"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-mdpi/ic_action_search.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="progress_secondary_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-mdpi/progress_secondary_studybloxx.9.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_action_new_dark"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-mdpi/ic_action_new_dark.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_action_edit"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-mdpi/ic_action_edit.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ab_stacked_solid_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-mdpi/ab_stacked_solid_studybloxx.9.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="list_focused_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-mdpi/list_focused_studybloxx.9.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="tab_selected_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-mdpi/tab_selected_studybloxx.9.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="menu_dropdown_panel_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-mdpi/menu_dropdown_panel_studybloxx.9.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="spinner_ab_pressed_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-mdpi/spinner_ab_pressed_studybloxx.9.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ab_texture_tile_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-mdpi/ab_texture_tile_studybloxx.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="list_pressed_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-mdpi/list_pressed_studybloxx.9.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ab_transparent_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-mdpi/ab_transparent_studybloxx.9.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="tab_selected_pressed_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-mdpi/tab_selected_pressed_studybloxx.9.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="tab_unselected_focused_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-mdpi/tab_unselected_focused_studybloxx.9.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="progress_bg_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-mdpi/progress_bg_studybloxx.9.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_action_refresh"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-mdpi/ic_action_refresh.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="drawer_shadow"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-mdpi/drawer_shadow.9.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ab_solid_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-mdpi/ab_solid_studybloxx.9.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="cab_background_bottom_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-mdpi/cab_background_bottom_studybloxx.9.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="btn_cab_done_default_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-mdpi/btn_cab_done_default_studybloxx.9.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_action_accept"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-mdpi/ic_action_accept.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="cab_background_top_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-mdpi/cab_background_top_studybloxx.9.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_action_cancel"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-mdpi/ic_action_cancel.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_action_new"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-mdpi/ic_action_new.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="btn_cab_done_pressed_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xhdpi/btn_cab_done_pressed_studybloxx.9.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="tab_unselected_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xhdpi/tab_unselected_studybloxx.9.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="tab_unselected_pressed_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xhdpi/tab_unselected_pressed_studybloxx.9.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="spinner_ab_focused_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xhdpi/spinner_ab_focused_studybloxx.9.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xhdpi/ic_launcher.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="spinner_ab_default_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xhdpi/spinner_ab_default_studybloxx.9.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_discard"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xhdpi/ic_action_discard.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_camera"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xhdpi/ic_action_camera.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="btn_cab_done_focused_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xhdpi/btn_cab_done_focused_studybloxx.9.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ab_bottom_solid_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xhdpi/ab_bottom_solid_studybloxx.9.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="progress_primary_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xhdpi/progress_primary_studybloxx.9.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="spinner_ab_disabled_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xhdpi/spinner_ab_disabled_studybloxx.9.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="tab_selected_focused_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xhdpi/tab_selected_focused_studybloxx.9.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_search"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xhdpi/ic_action_search.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="progress_secondary_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xhdpi/progress_secondary_studybloxx.9.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_new_dark"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xhdpi/ic_action_new_dark.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_edit"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xhdpi/ic_action_edit.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ab_stacked_solid_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xhdpi/ab_stacked_solid_studybloxx.9.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="list_focused_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xhdpi/list_focused_studybloxx.9.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="tab_selected_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xhdpi/tab_selected_studybloxx.9.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="menu_dropdown_panel_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xhdpi/menu_dropdown_panel_studybloxx.9.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="spinner_ab_pressed_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xhdpi/spinner_ab_pressed_studybloxx.9.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ab_texture_tile_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xhdpi/ab_texture_tile_studybloxx.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="list_pressed_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xhdpi/list_pressed_studybloxx.9.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ab_transparent_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xhdpi/ab_transparent_studybloxx.9.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="tab_selected_pressed_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xhdpi/tab_selected_pressed_studybloxx.9.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="tab_unselected_focused_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xhdpi/tab_unselected_focused_studybloxx.9.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="progress_bg_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xhdpi/progress_bg_studybloxx.9.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_refresh"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xhdpi/ic_action_refresh.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="drawer_shadow"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xhdpi/drawer_shadow.9.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ab_solid_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xhdpi/ab_solid_studybloxx.9.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="cab_background_bottom_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xhdpi/cab_background_bottom_studybloxx.9.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="btn_cab_done_default_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xhdpi/btn_cab_done_default_studybloxx.9.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_accept"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xhdpi/ic_action_accept.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="cab_background_top_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xhdpi/cab_background_top_studybloxx.9.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_cancel"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xhdpi/ic_action_cancel.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_new"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-xhdpi/ic_action_new.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="selectable_background_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable/selectable_background_studybloxx.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="btn_cab_done_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable/btn_cab_done_studybloxx.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="card_bg"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable/card_bg.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="ab_background_textured_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable/ab_background_textured_studybloxx.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="tab_indicator_ab_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable/tab_indicator_ab_studybloxx.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="progress_horizontal_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable/progress_horizontal_studybloxx.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="spinner_background_ab_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable/spinner_background_ab_studybloxx.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/values-sw600dp/refs.xml"
+                qualifiers="sw600dp" >
                 <item
                     name="activity_note_list"
                     type="layout">
@@ -1191,7 +929,77 @@ wrap_content
                 </item>
             </file>
             <file
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/values-large/styles.xml"
+                name="navbar_list_item"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/layout/navbar_list_item.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="activity_add_note"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/layout/activity_add_note.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="fragment_note_list"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/layout/fragment_note_list.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="note_all"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/layout/note_all.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="activity_main"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/layout/activity_main.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="activity_login"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/layout/activity_login.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="note_list_drawer"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/layout/note_list_drawer.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="activity_note_twopane"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/layout/activity_note_twopane.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="activity_note_list"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/layout/activity_note_list.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="add_course_dialog"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/layout/add_course_dialog.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="activity_registration"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/layout/activity_registration.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="activity_note_detail"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/layout/activity_note_detail.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="fragment_note_detail"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/layout/fragment_note_detail.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="notes_list_item"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/layout/notes_list_item.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/values-large/styles.xml"
                 qualifiers="large" >
 
                 <style name="LoginFormContainer" >
@@ -1210,8 +1018,8 @@ center
                 </style>
             </file>
             <file
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/values-sw600dp/refs.xml"
-                qualifiers="sw600dp" >
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/values-large/refs.xml"
+                qualifiers="large" >
                 <item
                     name="activity_note_list"
                     type="layout">
@@ -1219,38 +1027,231 @@ center
                 </item>
             </file>
             <file
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/values-sw720dp-land/dimens.xml"
-                qualifiers="sw720dp-land" >
-                <dimen name="activity_horizontal_margin" >128dp
-                </dimen>
-            </file>
+                name="btn_cab_done_pressed_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-hdpi/btn_cab_done_pressed_studybloxx.9.png"
+                qualifiers="hdpi"
+                type="drawable" />
             <file
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/values-v11/styles.xml"
-                qualifiers="v11" >
-
-                <style
-                    name="AppBaseTheme"
-                    parent="android:Theme.Holo.Light" >
-
-                    <!-- API 11 theme customizations can go here. -->
-                </style>
-            </file>
+                name="tab_unselected_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-hdpi/tab_unselected_studybloxx.9.png"
+                qualifiers="hdpi"
+                type="drawable" />
             <file
-                path="/Users/arjunnaik/studybloxx/app/src/main/res/values-v14/styles.xml"
-                qualifiers="v14" >
-
-                <style
-                    name="AppBaseTheme"
-                    parent="android:Theme.Holo.Light.DarkActionBar" >
-
-                    <!-- API 14 theme customizations can go here. -->
-                </style>
-            </file>
+                name="tab_unselected_pressed_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-hdpi/tab_unselected_pressed_studybloxx.9.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="spinner_ab_focused_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-hdpi/spinner_ab_focused_studybloxx.9.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-hdpi/ic_launcher.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="spinner_ab_default_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-hdpi/spinner_ab_default_studybloxx.9.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_action_discard"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-hdpi/ic_action_discard.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_action_camera"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-hdpi/ic_action_camera.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="btn_cab_done_focused_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-hdpi/btn_cab_done_focused_studybloxx.9.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ab_bottom_solid_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-hdpi/ab_bottom_solid_studybloxx.9.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="progress_primary_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-hdpi/progress_primary_studybloxx.9.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="spinner_ab_disabled_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-hdpi/spinner_ab_disabled_studybloxx.9.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="tab_selected_focused_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-hdpi/tab_selected_focused_studybloxx.9.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_action_search"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-hdpi/ic_action_search.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="progress_secondary_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-hdpi/progress_secondary_studybloxx.9.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_action_new_dark"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-hdpi/ic_action_new_dark.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_action_edit"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-hdpi/ic_action_edit.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ab_stacked_solid_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-hdpi/ab_stacked_solid_studybloxx.9.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="list_focused_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-hdpi/list_focused_studybloxx.9.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="tab_selected_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-hdpi/tab_selected_studybloxx.9.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="menu_dropdown_panel_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-hdpi/menu_dropdown_panel_studybloxx.9.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="spinner_ab_pressed_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-hdpi/spinner_ab_pressed_studybloxx.9.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ab_texture_tile_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-hdpi/ab_texture_tile_studybloxx.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="list_pressed_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-hdpi/list_pressed_studybloxx.9.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ab_transparent_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-hdpi/ab_transparent_studybloxx.9.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="tab_selected_pressed_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-hdpi/tab_selected_pressed_studybloxx.9.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="tab_unselected_focused_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-hdpi/tab_unselected_focused_studybloxx.9.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="progress_bg_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-hdpi/progress_bg_studybloxx.9.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_action_refresh"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-hdpi/ic_action_refresh.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="drawer_shadow"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-hdpi/drawer_shadow.9.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_drawer"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-hdpi/ic_drawer.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ab_solid_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-hdpi/ab_solid_studybloxx.9.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="cab_background_bottom_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-hdpi/cab_background_bottom_studybloxx.9.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="btn_cab_done_default_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-hdpi/btn_cab_done_default_studybloxx.9.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_action_accept"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-hdpi/ic_action_accept.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="cab_background_top_studybloxx"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-hdpi/cab_background_top_studybloxx.9.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_action_cancel"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-hdpi/ic_action_cancel.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_action_new"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/drawable-hdpi/ic_action_new.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="login_check"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/menu/login_check.xml"
+                qualifiers=""
+                type="menu" />
+            <file
+                name="notes_list"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/menu/notes_list.xml"
+                qualifiers=""
+                type="menu" />
+            <file
+                name="note_detail_menu"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/menu/note_detail_menu.xml"
+                qualifiers=""
+                type="menu" />
+            <file
+                name="login"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/menu/login.xml"
+                qualifiers=""
+                type="menu" />
+            <file
+                name="main"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/menu/main.xml"
+                qualifiers=""
+                type="menu" />
+            <file
+                name="add_note"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/menu/add_note.xml"
+                qualifiers=""
+                type="menu" />
         </source>
-        <source path="/Users/arjunnaik/studybloxx/app/build/res/rs/debug" />
+        <source path="/home/arjun/Documents/studybloxx/app/build/res/rs/debug" />
+        <source path="/home/arjun/Documents/studybloxx/app/build/res/generated/debug" />
     </dataSet>
     <dataSet config="debug" >
-        <source path="/Users/arjunnaik/studybloxx/app/src/debug/res" />
+        <source path="/home/arjun/Documents/studybloxx/app/src/debug/res" />
     </dataSet>
 
 </merger>

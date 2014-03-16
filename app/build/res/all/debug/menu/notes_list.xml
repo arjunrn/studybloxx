@@ -16,4 +16,4 @@
         android:showAsAction="never"
         android:title="@string/menu_logout"/>
 
-</menu><!-- From: file:/Users/arjunnaik/studybloxx/app/src/main/res/menu/notes_list.xml -->
+</menu><!-- From: file:/home/arjun/Documents/studybloxx/app/src/main/res/menu/notes_list.xml -->

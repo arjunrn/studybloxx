@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- From: file:/Users/arjunnaik/studybloxx/app/src/main/res/values-large/refs.xml -->
+    <!-- From: file:/home/arjun/Documents/studybloxx/app/src/main/res/values-large/refs.xml -->
     <eat-comment />
 
     <item name="activity_note_list" type="layout">@layout/activity_note_twopane</item>
-    <!-- From: file:/Users/arjunnaik/studybloxx/app/src/main/res/values-large/styles.xml -->
+    <!-- From: file:/home/arjun/Documents/studybloxx/app/src/main/res/values-large/styles.xml -->
     <eat-comment />
 
     <style name="LoginFormContainer">

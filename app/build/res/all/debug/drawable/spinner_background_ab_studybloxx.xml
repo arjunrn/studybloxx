@@ -26,4 +26,4 @@
         android:drawable="@drawable/spinner_ab_focused_studybloxx" />
     <item android:drawable="@drawable/spinner_ab_default_studybloxx" />
 </selector>
-<!-- From: file:/Users/arjunnaik/studybloxx/app/src/main/res/drawable/spinner_background_ab_studybloxx.xml -->
+<!-- From: file:/home/arjun/Documents/studybloxx/app/src/main/res/drawable/spinner_background_ab_studybloxx.xml -->

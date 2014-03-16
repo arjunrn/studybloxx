@@ -2,10 +2,10 @@
 <merger>
 
     <dataSet config="main" >
-        <source path="/Users/arjunnaik/studybloxx/app/src/main/assets" />
+        <source path="/home/arjun/Documents/studybloxx/app/src/main/assets" />
     </dataSet>
     <dataSet config="debug" >
-        <source path="/Users/arjunnaik/studybloxx/app/src/debug/assets" />
+        <source path="/home/arjun/Documents/studybloxx/app/src/debug/assets" />
     </dataSet>
 
 </merger>

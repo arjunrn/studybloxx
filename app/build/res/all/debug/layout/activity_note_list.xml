@@ -36,4 +36,4 @@
         android:divider="@android:color/darker_gray"
         android:dividerHeight="1dp" />
 
-</android.support.v4.widget.DrawerLayout><!-- From: file:/Users/arjunnaik/studybloxx/app/src/main/res/layout/activity_note_list.xml -->
+</android.support.v4.widget.DrawerLayout><!-- From: file:/home/arjun/Documents/studybloxx/app/src/main/res/layout/activity_note_list.xml -->

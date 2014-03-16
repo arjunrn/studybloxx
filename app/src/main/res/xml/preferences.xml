@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="Sync Server">
+        <EditTextPreference
+            android:key="sync_server_address"
+            android:summary="Please enter the IP address or the domain name with the HTTP or HTTPS and the trailing slash."
+            android:title="Resource"></EditTextPreference>
+    </PreferenceCategory>
+</PreferenceScreen>

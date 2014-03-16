@@ -138,13 +138,14 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int activity_note_list=0x7f030004;
         public static final int activity_note_twopane=0x7f030005;
         public static final int activity_registration=0x7f030006;
-        public static final int add_course_dialog=0x7f030007;
-        public static final int fragment_note_detail=0x7f030008;
-        public static final int fragment_note_list=0x7f030009;
-        public static final int navbar_list_item=0x7f03000a;
-        public static final int note_all=0x7f03000b;
-        public static final int note_list_drawer=0x7f03000c;
-        public static final int notes_list_item=0x7f03000d;
+        public static final int activity_settings=0x7f030007;
+        public static final int add_course_dialog=0x7f030008;
+        public static final int fragment_note_detail=0x7f030009;
+        public static final int fragment_note_list=0x7f03000a;
+        public static final int navbar_list_item=0x7f03000b;
+        public static final int note_all=0x7f03000c;
+        public static final int note_list_drawer=0x7f03000d;
+        public static final int notes_list_item=0x7f03000e;
     }
     public static final class menu {
         public static final int add_note=0x7f070000;
@@ -153,6 +154,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int main=0x7f070003;
         public static final int note_detail_menu=0x7f070004;
         public static final int notes_list=0x7f070005;
+        public static final int settings=0x7f070006;
     }
     public static final class string {
         public static final int action_forgot_password=0x7f050000;
@@ -196,7 +198,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int title_activity_login_check=0x7f050026;
         public static final int title_activity_main=0x7f050027;
         public static final int title_activity_registration_check=0x7f050028;
-        public static final int title_lecture_detail=0x7f050029;
+        public static final int title_activity_settings=0x7f050029;
+        public static final int title_lecture_detail=0x7f05002a;
     }
     public static final class style {
         public static final int ActionBar_Solid_Studybloxx=0x7f060000;

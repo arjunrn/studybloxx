@@ -115,6 +115,7 @@
     <string name="title_activity_login_check">Studybloxx</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_registration_check">Registration</string>
+    <string name="title_activity_settings">Settings</string>
     <string name="title_lecture_detail">Lecture Detail</string>
     <!-- From: file:/home/arjun/Documents/studybloxx/app/src/main/res/values/styles_studybloxx.xml -->
     <eat-comment />

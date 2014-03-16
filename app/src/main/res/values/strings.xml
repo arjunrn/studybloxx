@@ -18,5 +18,6 @@
     <string name="drawer_open">Open Course List</string>
     <string name="drawer_close">Close Course List</string>
     <string name="app_not_available"> Not Available</string>
+    <string name="title_activity_settings">Settings</string>
 
 </resources>

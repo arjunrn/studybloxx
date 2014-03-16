@@ -23,7 +23,7 @@
         <activity
             android:name="tu.dresden.studybloxx.NoteDetailActivity"
             android:label="@string/title_lecture_detail"
-            android:parentActivityName=".NoteListActivity" >
+            android:parentActivityName="tu.dresden.studybloxx.NoteListActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".LectureListActivity" />
@@ -65,6 +65,11 @@
             android:enabled="true"
             android:exported="false" >
         </service>
+
+        <activity
+            android:name="tu.dresden.studybloxx.SettingsActivity"
+            android:label="@string/title_activity_settings" >
+        </activity>
     </application>
 
 </manifest>

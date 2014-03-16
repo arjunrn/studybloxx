@@ -33,6 +33,9 @@
 
         <service android:enabled="true" android:exported="false" android:name="tu.dresden.studybloxx.services.UploadService">
         </service>
+
+        <activity android:label="@string/title_activity_settings" android:name="tu.dresden.studybloxx.SettingsActivity">
+        </activity>
     </application>
 
 </manifest>

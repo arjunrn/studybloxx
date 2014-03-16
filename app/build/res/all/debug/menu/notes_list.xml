@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <item
+        android:title="Settings"
+        android:id="@+id/action_settings"
+        android:icon="@drawable/ic_launcher"
+        android:showAsAction="never"></item>
     <item
         android:id="@+id/action_refresh_note"
         android:icon="@drawable/ic_action_refresh"
         android:showAsAction="ifRoom"
-        android:title="@string/menu_refresh_notes"/>
+        android:title="@string/menu_refresh_notes" />
     <item
         android:id="@+id/action_quick_add_note"
         android:icon="@drawable/ic_action_new"
         android:showAsAction="always"
-        android:title="@string/menu_quick_add_note"/>
+        android:title="@string/menu_quick_add_note" />
     <item
         android:id="@+id/action_logout"
         android:showAsAction="never"
-        android:title="@string/menu_logout"/>
+        android:title="@string/menu_logout" />
 
 </menu><!-- From: file:/home/arjun/Documents/studybloxx/app/src/main/res/menu/notes_list.xml -->

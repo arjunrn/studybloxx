@@ -55,7 +55,7 @@
         </service>
 
         <provider
-            android:name="tu.dresden.studybloxx.database.StudybloxxProvider"
+            android:name=".providers.StudybloxxProvider"
             android:authorities="tu.dresden.studybloxx.courseprovider"
             android:enabled="true" >
         </provider>

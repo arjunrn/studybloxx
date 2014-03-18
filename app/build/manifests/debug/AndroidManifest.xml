@@ -28,7 +28,7 @@
         <service android:name="tu.dresden.studybloxx.services.SyncService">
         </service>
 
-        <provider android:authorities="tu.dresden.studybloxx.courseprovider" android:enabled="true" android:name="tu.dresden.studybloxx.database.StudybloxxProvider">
+        <provider android:authorities="tu.dresden.studybloxx.courseprovider" android:enabled="true" android:name="tu.dresden.studybloxx.providers.StudybloxxProvider">
         </provider>
 
         <service android:enabled="true" android:exported="false" android:name="tu.dresden.studybloxx.services.UploadService">

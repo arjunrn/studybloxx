@@ -5,7 +5,7 @@ import tu.dresden.studybloxx.NoteDetailActivity;
 import tu.dresden.studybloxx.NoteListActivity;
 import tu.dresden.studybloxx.R;
 import tu.dresden.studybloxx.database.StudybloxxDBHelper;
-import tu.dresden.studybloxx.database.StudybloxxProvider;
+import tu.dresden.studybloxx.providers.StudybloxxProvider;
 import android.content.ContentResolver;
 import android.content.ContentUris;
 import android.content.ContentValues;

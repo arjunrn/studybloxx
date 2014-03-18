@@ -1,4 +1,4 @@
-package tu.dresden.studybloxx.database;
+package tu.dresden.studybloxx.providers;
 
 import android.content.ContentProvider;
 import android.content.ContentUris;
@@ -15,33 +15,24 @@ import android.util.Log;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import tu.dresden.studybloxx.database.StudybloxxDBHelper;
 import tu.dresden.studybloxx.services.UploadService;
 import tu.dresden.studybloxx.utils.Helper;
 import tu.dresden.studybloxx.utils.HttpFetch;
 
 
 public class StudybloxxProvider extends ContentProvider {
-    private StudybloxxDBHelper mDB;
-
-    private String mServerAddress;
-
     private static final UriMatcher mURIMatcher = new UriMatcher(UriMatcher.NO_MATCH);
-
     private static final String AUTHORITY = "tu.dresden.studybloxx.courseprovider";
     private static final String COURSES_BASE_PATH = "courses";
-
-    private static final String NOTES_BASE_PATH = "notes";
     public static final Uri COURSE_CONTENT_URI = Uri.parse("content://" + AUTHORITY + "/" + COURSES_BASE_PATH);
-
+    private static final String NOTES_BASE_PATH = "notes";
     public static final Uri NOTE_CONTENT_URI = Uri.parse("content://" + AUTHORITY + "/" + NOTES_BASE_PATH);
     private static final int COURSES = 0;
     private static final int COURSE_ID = 1;
     private static final int NOTES = 2;
-
     private static final int NOTE_ID = 3;
-
     private static final String TAG = "StudybloxxProvider";
-
     private static final String INSERT_NOTE_STATEMENT = "INSERT INTO " + StudybloxxDBHelper.NOTE_TABLE_NAME + "()";
 
     static {
@@ -50,6 +41,9 @@ public class StudybloxxProvider extends ContentProvider {
         mURIMatcher.addURI(AUTHORITY, NOTES_BASE_PATH, NOTES);
         mURIMatcher.addURI(AUTHORITY, NOTES_BASE_PATH + "/#", NOTE_ID);
     }
+
+    private StudybloxxDBHelper mDB;
+    private String mServerAddress;
 
 
     public StudybloxxProvider() {
@@ -77,7 +71,7 @@ public class StudybloxxProvider extends ContentProvider {
             case COURSES: {
                 Log.d(TAG, "INSERT INTO COURSES");
                 SQLiteDatabase db = mDB.getWritableDatabase();
-                values.put(StudybloxxDBHelper.COURSE_SYNCED, 0);
+                values.put(StudybloxxDBHelper.Contract.Course.SYNC_STATUS, 0);
                 long newCourseId = db.insert(StudybloxxDBHelper.COURSE_TABLE_NAME, null, values);
                 getContext().getContentResolver().notifyChange(COURSE_CONTENT_URI, null);
                 db.close();
@@ -151,8 +145,8 @@ public class StudybloxxProvider extends ContentProvider {
                 Log.d(TAG, "Note ID: " + noteId);
                 SQLiteDatabase database = mDB.getReadableDatabase();
 
-                Cursor noteCursor = database.query(StudybloxxDBHelper.NOTE_TABLE_NAME, new String[]{StudybloxxDBHelper.NOTE_URL,
-                        StudybloxxDBHelper.NOTE_SYNCED, StudybloxxDBHelper.NOTE_UNSYNCED}, StudybloxxDBHelper.NOTE_ID + "=?", new String[]{Long.toString(noteId)}, null, null, null);
+                Cursor noteCursor = database.query(StudybloxxDBHelper.NOTE_TABLE_NAME, new String[]{StudybloxxDBHelper.Contract.Note.URL,
+                        StudybloxxDBHelper.Contract.Note.SYNC_STATUS}, StudybloxxDBHelper.Contract.Note.ID + "=?", new String[]{Long.toString(noteId)}, null, null, null);
                 noteCursor.moveToFirst();
                 String noteUrl = noteCursor.getString(0);
                 boolean courseSynced = noteCursor.getInt(1) == 1 || noteCursor.getInt(2) == 1;
@@ -162,21 +156,21 @@ public class StudybloxxProvider extends ContentProvider {
                     try {
                         JSONObject response = new JSONObject(noteContents);
                         ContentValues values = new ContentValues();
-                        values.put(StudybloxxDBHelper.NOTE_TITLE, response.getString("title"));
-                        values.put(StudybloxxDBHelper.NOTE_CONTENT, response.getString("text"));
-                        values.put(StudybloxxDBHelper.NOTE_CREATED, response.getLong("created"));
-                        values.put(StudybloxxDBHelper.NOTE_UPDATED, response.getLong("updated"));
-                        values.put(StudybloxxDBHelper.NOTE_COURSE, response.getLong("course"));
-                        values.put(StudybloxxDBHelper.NOTE_SYNCED, 1);
+                        values.put(StudybloxxDBHelper.Contract.Note.TITLE, response.getString("title"));
+                        values.put(StudybloxxDBHelper.Contract.Note.CONTENT, response.getString("text"));
+                        values.put(StudybloxxDBHelper.Contract.Note.CREATED, response.getLong("created"));
+                        values.put(StudybloxxDBHelper.Contract.Note.UPDATED, response.getLong("updated"));
+                        values.put(StudybloxxDBHelper.Contract.Note.COURSE, response.getLong("course"));
+                        values.put(StudybloxxDBHelper.Contract.Note.SYNC_STATUS, 1);
                         SQLiteDatabase wdb = mDB.getWritableDatabase();
-                        wdb.update(StudybloxxDBHelper.NOTE_TABLE_NAME, values, StudybloxxDBHelper.NOTE_ID + "=?", new String[]{Long.toString(noteId)});
+                        wdb.update(StudybloxxDBHelper.NOTE_TABLE_NAME, values, StudybloxxDBHelper.Contract.Note.ID + "=?", new String[]{Long.toString(noteId)});
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
                 }
 
-                noteCursor = database.query(StudybloxxDBHelper.NOTE_TABLE_NAME, projection, StudybloxxDBHelper.NOTE_ID + "=? AND "
-                        + StudybloxxDBHelper.NOTE_SYNCED + "=1 OR " + StudybloxxDBHelper.NOTE_UNSYNCED + "=1", new String[]{Long.toString(noteId)}, null, null, null);
+                noteCursor = database.query(StudybloxxDBHelper.NOTE_TABLE_NAME, projection, StudybloxxDBHelper.Contract.Note.ID + "=? AND "
+                        + StudybloxxDBHelper.Contract.Note.SYNC_STATUS + "=1 ", new String[]{Long.toString(noteId)}, null, null, null);
                 noteCursor.setNotificationUri(getContext().getContentResolver(), uri);
                 return noteCursor;
             }
@@ -205,7 +199,7 @@ public class StudybloxxProvider extends ContentProvider {
             case NOTE_ID: {
                 SQLiteDatabase db = mDB.getWritableDatabase();
                 long id = Long.parseLong(uri.getLastPathSegment());
-                int updateCount = db.update(StudybloxxDBHelper.NOTE_TABLE_NAME, values, StudybloxxDBHelper.NOTE_ID + "=?", new String[]{Long.toString(id)});
+                int updateCount = db.update(StudybloxxDBHelper.NOTE_TABLE_NAME, values, StudybloxxDBHelper.Contract.Note.ID + "=?", new String[]{Long.toString(id)});
                 db.close();
                 getContext().getContentResolver().notifyChange(uri, null);
                 return updateCount;

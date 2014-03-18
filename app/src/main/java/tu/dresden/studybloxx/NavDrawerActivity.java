@@ -2,7 +2,7 @@ package tu.dresden.studybloxx;
 
 import tu.dresden.studybloxx.adapters.CourseCursorAdapter;
 import tu.dresden.studybloxx.database.StudybloxxDBHelper;
-import tu.dresden.studybloxx.database.StudybloxxProvider;
+import tu.dresden.studybloxx.providers.StudybloxxProvider;
 import tu.dresden.studybloxx.fragments.NoteListFragment;
 import android.app.FragmentManager;
 import android.app.SearchManager;

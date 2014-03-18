@@ -21,6 +21,11 @@
                 </style>
             </file>
             <file
+                name="preferences"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/xml/preferences.xml"
+                qualifiers=""
+                type="xml" />
+            <file
                 path="/home/arjun/Documents/studybloxx/app/src/main/res/values-v14/styles.xml"
                 qualifiers="v14" >
 
@@ -30,6 +35,12 @@
 
                     <!-- API 14 theme customizations can go here. -->
                 </style>
+            </file>
+            <file
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/values-w820dp/dimens.xml"
+                qualifiers="w820dp" >
+                <dimen name="activity_horizontal_margin" >64dp
+                </dimen>
             </file>
             <file
                 name="btn_cab_done_pressed_studybloxx"
@@ -931,6 +942,11 @@ wrap_content
                 </item>
             </file>
             <file
+                name="activity_settings"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/layout/activity_settings.xml"
+                qualifiers=""
+                type="layout" />
+            <file
                 name="navbar_list_item"
                 path="/home/arjun/Documents/studybloxx/app/src/main/res/layout/navbar_list_item.xml"
                 qualifiers=""
@@ -1219,6 +1235,11 @@ center
                 qualifiers="hdpi"
                 type="drawable" />
             <file
+                name="settings"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/menu/settings.xml"
+                qualifiers=""
+                type="menu" />
+            <file
                 name="login_check"
                 path="/home/arjun/Documents/studybloxx/app/src/main/res/menu/login_check.xml"
                 qualifiers=""
@@ -1248,27 +1269,6 @@ center
                 path="/home/arjun/Documents/studybloxx/app/src/main/res/menu/add_note.xml"
                 qualifiers=""
                 type="menu" />
-            <file
-                name="activity_settings"
-                path="/home/arjun/Documents/studybloxx/app/src/main/res/layout/activity_settings.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                path="/home/arjun/Documents/studybloxx/app/src/main/res/values-w820dp/dimens.xml"
-                qualifiers="w820dp" >
-                <dimen name="activity_horizontal_margin" >64dp
-                </dimen>
-            </file>
-            <file
-                name="settings"
-                path="/home/arjun/Documents/studybloxx/app/src/main/res/menu/settings.xml"
-                qualifiers=""
-                type="menu" />
-            <file
-                name="preferences"
-                path="/home/arjun/Documents/studybloxx/app/src/main/res/xml/preferences.xml"
-                qualifiers=""
-                type="xml" />
         </source>
         <source path="/home/arjun/Documents/studybloxx/app/build/res/rs/debug" />
         <source path="/home/arjun/Documents/studybloxx/app/build/res/generated/debug" />

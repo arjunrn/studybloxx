@@ -25,7 +25,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
 import tu.dresden.studybloxx.database.StudybloxxDBHelper;
-import tu.dresden.studybloxx.database.StudybloxxProvider;
+import tu.dresden.studybloxx.providers.StudybloxxProvider;
 
 
 public abstract class CourseUploadTask extends AsyncTask<Void, Void, Boolean> {

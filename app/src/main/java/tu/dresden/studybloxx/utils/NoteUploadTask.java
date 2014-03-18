@@ -60,8 +60,8 @@ public abstract class NoteUploadTask extends AsyncTask<Void, Void, Boolean> {
     protected Boolean doInBackground(Void... params) {
         ArrayList<NameValuePair> reqParams = new ArrayList<NameValuePair>();
         SQLiteDatabase database = mHelper.getWritableDatabase();
-        Cursor cursor = database.query(StudybloxxDBHelper.NOTE_TABLE_NAME, new String[]{StudybloxxDBHelper.NOTE_ID, StudybloxxDBHelper.NOTE_TITLE,
-                StudybloxxDBHelper.NOTE_CONTENT, StudybloxxDBHelper.NOTE_COURSE}, StudybloxxDBHelper.NOTE_UNSYNCED + "=1", null, null, null, null);
+        Cursor cursor = database.query(StudybloxxDBHelper.NOTE_TABLE_NAME, new String[]{StudybloxxDBHelper.Contract.Note.ID, StudybloxxDBHelper.Contract.Note.TITLE,
+                StudybloxxDBHelper.Contract.Note.CONTENT, StudybloxxDBHelper.Contract.Note.COURSE}, StudybloxxDBHelper.Contract.Note.SYNC_STATUS + "=1", null, null, null, null);
 
         int unUploadedCount = cursor.getCount();
         Log.d(TAG, "Unsynced New Note Count: " + unUploadedCount);
@@ -115,20 +115,18 @@ public abstract class NoteUploadTask extends AsyncTask<Void, Void, Boolean> {
                     return false;
                 }
                 ContentValues values = new ContentValues();
-                values.put(StudybloxxDBHelper.NOTE_ID, noteId);
-                values.put(StudybloxxDBHelper.NOTE_CREATED, created);
-                values.put(StudybloxxDBHelper.NOTE_UPDATED, updated);
-                values.put(StudybloxxDBHelper.NOTE_SYNCED, 1);
-                values.put(StudybloxxDBHelper.NOTE_UNSYNCED, 0);
-                database.update(StudybloxxDBHelper.NOTE_TABLE_NAME, values, StudybloxxDBHelper.NOTE_ID + "=?", new String[]{Long.toString(firstNoteId)});
+                values.put(StudybloxxDBHelper.Contract.Note.ID, noteId);
+                values.put(StudybloxxDBHelper.Contract.Note.CREATED, created);
+                values.put(StudybloxxDBHelper.Contract.Note.UPDATED, updated);
+                values.put(StudybloxxDBHelper.Contract.Note.SYNC_STATUS, 1);
+                database.update(StudybloxxDBHelper.NOTE_TABLE_NAME, values, StudybloxxDBHelper.Contract.Note.ID + "=?", new String[]{Long.toString(firstNoteId)});
 
                 cursor.moveToNext();
             }
         }
         cursor.close();
 
-        cursor = database.query(StudybloxxDBHelper.NOTE_TABLE_NAME, new String[]{StudybloxxDBHelper.NOTE_ID, StudybloxxDBHelper.NOTE_TITLE,
-                StudybloxxDBHelper.NOTE_CONTENT, StudybloxxDBHelper.NOTE_COURSE}, StudybloxxDBHelper.NOTE_UNSYNCED + "=2", null, null, null, null);
+        cursor = database.query(StudybloxxDBHelper.NOTE_TABLE_NAME, new String[]{StudybloxxDBHelper.Contract.Note.ID, StudybloxxDBHelper.Contract.Note.TITLE, StudybloxxDBHelper.Contract.Note.CONTENT, StudybloxxDBHelper.Contract.Note.COURSE}, null, null, null, null, null);
         unUploadedCount = cursor.getCount();
         Log.d(TAG, "Unsynced Updated Note Count: " + unUploadedCount);
 
@@ -181,11 +179,10 @@ public abstract class NoteUploadTask extends AsyncTask<Void, Void, Boolean> {
                     return false;
                 }
                 ContentValues values = new ContentValues();
-                values.put(StudybloxxDBHelper.NOTE_ID, noteId);
-                values.put(StudybloxxDBHelper.NOTE_UPDATED, updated);
-                values.put(StudybloxxDBHelper.NOTE_SYNCED, 1);
-                values.put(StudybloxxDBHelper.NOTE_UNSYNCED, 0);
-                database.update(StudybloxxDBHelper.NOTE_TABLE_NAME, values, StudybloxxDBHelper.NOTE_ID + "=?", new String[]{Long.toString(firstNoteId)});
+                values.put(StudybloxxDBHelper.Contract.Note.ID, noteId);
+                values.put(StudybloxxDBHelper.Contract.Note.UPDATED, updated);
+                values.put(StudybloxxDBHelper.Contract.Note.SYNC_STATUS, 1);
+                database.update(StudybloxxDBHelper.NOTE_TABLE_NAME, values, StudybloxxDBHelper.Contract.Note.ID + "=?", new String[]{Long.toString(firstNoteId)});
 
                 cursor.moveToNext();
             }

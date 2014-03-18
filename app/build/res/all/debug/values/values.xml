@@ -81,13 +81,6 @@
     <string name="error_incorrect_password">This password is incorrect</string>
     <string name="error_invalid_email">This email address is invalid</string>
     <string name="error_invalid_password">This password is too short</string>
-    <!-- From: file:/home/arjun/Documents/studybloxx/app/src/main/res/values/strings.xml -->
-    <eat-comment />
-
-    <string name="hello_world">Hello world!</string>
-    <!-- From: file:/home/arjun/Documents/studybloxx/app/src/main/res/values/strings_activity_login.xml -->
-    <eat-comment />
-
     <string name="login_progress_signing_in">Signing in…</string>
     <!-- From: file:/home/arjun/Documents/studybloxx/app/src/main/res/values/menu_quick_add_note.xml -->
     <eat-comment />
@@ -115,6 +108,7 @@
     <string name="title_activity_login_check">Studybloxx</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_registration_check">Registration</string>
+    <string name="title_activity_server_config">Server Configuration</string>
     <string name="title_activity_settings">Settings</string>
     <string name="title_lecture_detail">Lecture Detail</string>
     <!-- From: file:/home/arjun/Documents/studybloxx/app/src/main/res/values/styles_studybloxx.xml -->

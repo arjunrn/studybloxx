@@ -139,14 +139,15 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int activity_note_list=0x7f030004;
         public static final int activity_note_twopane=0x7f030005;
         public static final int activity_registration=0x7f030006;
-        public static final int activity_settings=0x7f030007;
-        public static final int add_course_dialog=0x7f030008;
-        public static final int fragment_note_detail=0x7f030009;
-        public static final int fragment_note_list=0x7f03000a;
-        public static final int navbar_list_item=0x7f03000b;
-        public static final int note_all=0x7f03000c;
-        public static final int note_list_drawer=0x7f03000d;
-        public static final int notes_list_item=0x7f03000e;
+        public static final int activity_server_config=0x7f030007;
+        public static final int activity_settings=0x7f030008;
+        public static final int add_course_dialog=0x7f030009;
+        public static final int fragment_note_detail=0x7f03000a;
+        public static final int fragment_note_list=0x7f03000b;
+        public static final int navbar_list_item=0x7f03000c;
+        public static final int note_all=0x7f03000d;
+        public static final int note_list_drawer=0x7f03000e;
+        public static final int notes_list_item=0x7f03000f;
     }
     public static final class menu {
         public static final int add_note=0x7f080000;
@@ -186,19 +187,19 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int error_incorrect_password=0x7f060019;
         public static final int error_invalid_email=0x7f06001a;
         public static final int error_invalid_password=0x7f06001b;
-        public static final int hello_world=0x7f06001c;
-        public static final int login_progress_signing_in=0x7f06001d;
-        public static final int menu_logout=0x7f06001e;
-        public static final int menu_quick_add_note=0x7f06001f;
-        public static final int menu_refresh_notes=0x7f060020;
-        public static final int prompt_email=0x7f060021;
-        public static final int prompt_password=0x7f060022;
-        public static final int prompt_reenter_password=0x7f060023;
-        public static final int title_activity_add_note=0x7f060024;
-        public static final int title_activity_login=0x7f060025;
-        public static final int title_activity_login_check=0x7f060026;
-        public static final int title_activity_main=0x7f060027;
-        public static final int title_activity_registration_check=0x7f060028;
+        public static final int login_progress_signing_in=0x7f06001c;
+        public static final int menu_logout=0x7f06001d;
+        public static final int menu_quick_add_note=0x7f06001e;
+        public static final int menu_refresh_notes=0x7f06001f;
+        public static final int prompt_email=0x7f060020;
+        public static final int prompt_password=0x7f060021;
+        public static final int prompt_reenter_password=0x7f060022;
+        public static final int title_activity_add_note=0x7f060023;
+        public static final int title_activity_login=0x7f060024;
+        public static final int title_activity_login_check=0x7f060025;
+        public static final int title_activity_main=0x7f060026;
+        public static final int title_activity_registration_check=0x7f060027;
+        public static final int title_activity_server_config=0x7f060028;
         public static final int title_activity_settings=0x7f060029;
         public static final int title_lecture_detail=0x7f06002a;
     }

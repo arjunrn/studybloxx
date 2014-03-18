@@ -57,8 +57,8 @@ public abstract class CourseUploadTask extends AsyncTask<Void, Void, Boolean> {
     protected Boolean doInBackground(Void... arg0) {
         ArrayList<NameValuePair> reqParams = new ArrayList<NameValuePair>();
         SQLiteDatabase database = mHelper.getWritableDatabase();
-        Cursor cursor = database.query(StudybloxxDBHelper.COURSE_TABLE_NAME, new String[]{StudybloxxDBHelper.COURSE_ID, StudybloxxDBHelper.COURSE_TITLE},
-                StudybloxxDBHelper.COURSE_SYNCED + "=0", null, null, null, null);
+        Cursor cursor = database.query(StudybloxxDBHelper.COURSE_TABLE_NAME, new String[]{StudybloxxDBHelper.Contract.Course.ID, StudybloxxDBHelper.Contract.Course.TITLE},
+                StudybloxxDBHelper.Contract.Course.SYNC_STATUS + "=0", null, null, null, null);
 
         int unsyncedCount = cursor.getCount();
         Log.d(TAG, "Number of unsynced courses: " + unsyncedCount);
@@ -108,10 +108,10 @@ public abstract class CourseUploadTask extends AsyncTask<Void, Void, Boolean> {
                     return false;
                 }
                 ContentValues values = new ContentValues();
-                values.put(StudybloxxDBHelper.COURSE_ID, courseId);
-                values.put(StudybloxxDBHelper.COURSE_URL, courseUrl);
-                values.put(StudybloxxDBHelper.COURSE_SYNCED, 1);
-                database.update(StudybloxxDBHelper.COURSE_TABLE_NAME, values, StudybloxxDBHelper.COURSE_ID + "=?", new String[]{Long.toString(initialId)});
+                values.put(StudybloxxDBHelper.Contract.Course.ID, courseId);
+                values.put(StudybloxxDBHelper.Contract.Course.URL, courseUrl);
+                values.put(StudybloxxDBHelper.Contract.Course.SYNC_STATUS, 1);
+                database.update(StudybloxxDBHelper.COURSE_TABLE_NAME, values, StudybloxxDBHelper.Contract.Course.ID + "=?", new String[]{Long.toString(initialId)});
                 cursor.moveToNext();
             }
         }

@@ -55,7 +55,7 @@
         </service>
 
         <provider
-            android:name=".providers.StudybloxxProvider"
+            android:name="tu.dresden.studybloxx.providers.StudybloxxProvider"
             android:authorities="tu.dresden.studybloxx.courseprovider"
             android:enabled="true" >
         </provider>
@@ -69,6 +69,10 @@
         <activity
             android:name="tu.dresden.studybloxx.SettingsActivity"
             android:label="@string/title_activity_settings" >
+        </activity>
+        <activity
+            android:name="tu.dresden.studybloxx.ServerConfigActivity"
+            android:label="@string/title_activity_server_config" >
         </activity>
     </application>
 

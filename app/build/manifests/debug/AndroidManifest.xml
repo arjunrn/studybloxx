@@ -36,6 +36,8 @@
 
         <activity android:label="@string/title_activity_settings" android:name="tu.dresden.studybloxx.SettingsActivity">
         </activity>
+        <activity android:label="@string/title_activity_server_config" android:name="tu.dresden.studybloxx.ServerConfigActivity">
+        </activity>
     </application>
 
 </manifest>

@@ -205,7 +205,7 @@ public abstract class NavDrawerActivity extends FragmentActivity implements Load
 	@Override
 	public Loader<Cursor> onCreateLoader(int arg0, Bundle arg1)
 	{
-		return new CursorLoader(this, StudybloxxProvider.COURSE_CONTENT_URI, new String[] { StudybloxxDBHelper.COURSE_ID, StudybloxxDBHelper.COURSE_TITLE },
+		return new CursorLoader(this, StudybloxxProvider.COURSE_CONTENT_URI, new String[] { StudybloxxDBHelper.Contract.Course.ID, StudybloxxDBHelper.Contract.Course.TITLE },
 			null, null, null);
 	}
 

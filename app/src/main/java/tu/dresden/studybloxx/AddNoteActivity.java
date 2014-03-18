@@ -47,7 +47,7 @@ public class AddNoteActivity extends Activity implements LoaderManager.LoaderCal
 	private String mContent;
 	private ImageButton mAddCourse;
 	private FragmentManager mFragmentManager;
-	private String mAappointmentName;
+	private String mAppointmentName;
 	private ContentResolver mResolver;
 
 
@@ -136,10 +136,10 @@ public class AddNoteActivity extends Activity implements LoaderManager.LoaderCal
 		if (mNoteId == 0)
 		{
 			ContentValues values = new ContentValues();
-			values.put(StudybloxxDBHelper.NOTE_TITLE, title);
-			values.put(StudybloxxDBHelper.NOTE_CONTENT, content);
-			values.put(StudybloxxDBHelper.NOTE_COURSE, courseID);
-			values.put(StudybloxxDBHelper.NOTE_UNSYNCED, 1);
+			values.put(StudybloxxDBHelper.Contract.Note.TITLE, title);
+			values.put(StudybloxxDBHelper.Contract.Note.CONTENT, content);
+			values.put(StudybloxxDBHelper.Contract.Note.COURSE, courseID);
+			values.put(StudybloxxDBHelper.Contract.Note.SYNC_STATUS, 1);
 			getContentResolver().insert(StudybloxxProvider.NOTE_CONTENT_URI, values);
 		}
 		else
@@ -147,14 +147,14 @@ public class AddNoteActivity extends Activity implements LoaderManager.LoaderCal
 			ContentValues values = new ContentValues();
 			if (!mTitle.equals(title))
 			{
-				values.put(StudybloxxDBHelper.NOTE_TITLE, title);
+				values.put(StudybloxxDBHelper.Contract.Note.TITLE, title);
 			}
 			if (!mContent.equals(content))
 			{
-				values.put(StudybloxxDBHelper.NOTE_CONTENT, content);
+				values.put(StudybloxxDBHelper.Contract.Note.CONTENT, content);
 			}
-			values.put(StudybloxxDBHelper.NOTE_UNSYNCED, 2);
-			getContentResolver().update(ContentUris.withAppendedId(StudybloxxProvider.NOTE_CONTENT_URI, mNoteId), values, StudybloxxDBHelper.NOTE_ID + "=?",
+			values.put(StudybloxxDBHelper.Contract.Note.SYNC_STATUS, 2);
+			getContentResolver().update(ContentUris.withAppendedId(StudybloxxProvider.NOTE_CONTENT_URI, mNoteId), values, StudybloxxDBHelper.Contract.Note.ID + "=?",
 				new String[] { Long.toString(mNoteId) });
 		}
 	}
@@ -168,12 +168,12 @@ public class AddNoteActivity extends Activity implements LoaderManager.LoaderCal
 			case NOTE_LOADER:
 			{
 				return new CursorLoader(this, ContentUris.withAppendedId(StudybloxxProvider.NOTE_CONTENT_URI, mNoteId), new String[] {
-					StudybloxxDBHelper.NOTE_TITLE, StudybloxxDBHelper.NOTE_CONTENT, StudybloxxDBHelper.NOTE_COURSE }, null, null, null);
+					StudybloxxDBHelper.Contract.Note.TITLE, StudybloxxDBHelper.Contract.Note.CONTENT, StudybloxxDBHelper.Contract.Note.COURSE }, null, null, null);
 			}
 			case COURSE_LOADER:
 			{
-				return new CursorLoader(this, StudybloxxProvider.COURSE_CONTENT_URI, new String[] { StudybloxxDBHelper.COURSE_ID,
-					StudybloxxDBHelper.COURSE_TITLE }, null, null, null);
+				return new CursorLoader(this, StudybloxxProvider.COURSE_CONTENT_URI, new String[] { StudybloxxDBHelper.Contract.Course.ID,
+					StudybloxxDBHelper.Contract.Course.TITLE }, null, null, null);
 			}
 			case CALENDAR_LOADER:
 			{
@@ -245,8 +245,8 @@ public class AddNoteActivity extends Activity implements LoaderManager.LoaderCal
 				{
 					Log.d(TAG, "Number of Appointments:" + cursor.getCount());
 					cursor.moveToFirst();
-					mAappointmentName = cursor.getString(0);
-					Log.d(TAG, "TITLE: " + mAappointmentName);
+					mAppointmentName = cursor.getString(0);
+					Log.d(TAG, "TITLE: " + mAppointmentName);
 				}
 				break;
 			}
@@ -279,7 +279,7 @@ public class AddNoteActivity extends Activity implements LoaderManager.LoaderCal
 		{
 			case R.id.add_course_button:
 			{
-				AddCourseDialogFragment.getInstance(mAappointmentName).show(mFragmentManager, null);
+				AddCourseDialogFragment.getInstance(mAppointmentName).show(mFragmentManager, null);
 				break;
 			}
 		}
@@ -291,8 +291,8 @@ public class AddNoteActivity extends Activity implements LoaderManager.LoaderCal
 	public void addCourse(String courseName)
 	{
 		ContentValues values = new ContentValues();
-		values.put(StudybloxxDBHelper.COURSE_TITLE, courseName);
-		values.put(StudybloxxDBHelper.COURSE_URL, "");
+		values.put(StudybloxxDBHelper.Contract.Course.TITLE, courseName);
+		values.put(StudybloxxDBHelper.Contract.Course.URL, "");
 		mResolver.insert(StudybloxxProvider.COURSE_CONTENT_URI, values);
 	}
 

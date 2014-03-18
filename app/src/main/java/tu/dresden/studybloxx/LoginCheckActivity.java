@@ -36,8 +36,8 @@ public class LoginCheckActivity extends Activity {
             startActivity(continueIntent);
             finish();
         } else {
-            Intent loginIntent = new Intent(this, LoginActivity.class);
-            startActivity(loginIntent);
+            Intent serverConfigIntent = new Intent(this, ServerConfigActivity.class);
+            startActivity(serverConfigIntent);
             finish();
         }
         super.onStart();

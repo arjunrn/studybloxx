@@ -54,6 +54,7 @@
 
     <string name="app_name">Studybloxx</string>
     <string name="app_not_available"> Not Available</string>
+    <string name="authenticator_label">Studybloxx</string>
     <!-- From: file:/home/arjun/Documents/studybloxx/app/src/main/res/values/strings_activity_add_note.xml -->
     <eat-comment />
 

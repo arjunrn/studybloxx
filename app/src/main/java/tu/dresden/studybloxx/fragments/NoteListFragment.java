@@ -171,7 +171,7 @@ public class NoteListFragment extends ListFragment implements LoaderCallbacks<Cu
                     selection = StudybloxxDBHelper.Contract.Note.COURSE + "=? AND " + StudybloxxDBHelper.Contract.Note.SYNC_STATUS + "=0";
                     selectionArgs = new String[]{Integer.toString(mSelectedCourseId)};
                 } else {
-                    selection = StudybloxxDBHelper.Contract.Note.SYNC_STATUS + "=0";
+                    selection = StudybloxxDBHelper.Contract.Note.SYNC_STATUS + ">= 0";
                 }
                 Log.d(TAG, "Selection: " + selection);
                 return new CursorLoader(mActivity, StudybloxxProvider.NOTE_CONTENT_URI, new String[]{StudybloxxDBHelper.Contract.Note.ID,

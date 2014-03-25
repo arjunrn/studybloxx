@@ -1,14 +1,40 @@
-n<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
     tools:context="tu.dresden.studybloxx.ServerConfigActivity">
 
+    <TextView
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="san-serif-light"
+        android:text="Please enter the IP address of the sync server of the full web address. Omit the 'http'."
+        android:textSize="16dp" />
+
     <EditText
+        android:id="@+id/server_config_server_addr"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal|center_vertical"
         android:hint="Server Address(IP or web)"
         android:textAlignment="center" />
 
+    <CheckBox
+        android:id="@+id/server_config_use_https"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:checked="false"
+        android:text="Use HTTPS" />
+
+    <Button
+        android:id="@+id/server_config_continue_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Continue" />
 </LinearLayout>

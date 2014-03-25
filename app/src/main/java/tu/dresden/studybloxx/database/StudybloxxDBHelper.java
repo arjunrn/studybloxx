@@ -47,6 +47,15 @@ public class StudybloxxDBHelper extends SQLiteOpenHelper {
 
 
     public interface Contract {
+
+        public interface SyncStatus {
+            public int SYNCED = 0;
+            public int MODIFIED = 1;
+            public int SERVER_DELETED = 2;
+            public int CREATED = 3;
+            public int CLIENT_DELETED = -1;
+        }
+
         public interface Syncable {
             public static String ID = "_id";
             public static String TITLE = "title";

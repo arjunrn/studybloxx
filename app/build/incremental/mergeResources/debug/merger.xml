@@ -236,31 +236,31 @@
                 </string>
                 <string name="confirm_dialog_positive" >OK
                 </string>
-                <string name="add_activity_note_title" >Note Title
-                </string>
                 <string name="add_course_confirm" >Add Course
+                </string>
+                <string name="add_activity_note_title" >Note Title
                 </string>
                 <string name="add_course_cancel" >Cancel
                 </string>
-                <string name="comfirm_dialog_content" >Are you sure you want to add a note with no title?
-                </string>
                 <string name="add_course_title" >Add Course
+                </string>
+                <string name="comfirm_dialog_content" >Are you sure you want to add a note with no title?
                 </string>
                 <string name="add_activity_attach_image" >Attach Image
                 </string>
                 <string name="add_activity_save_note" >Save
                 </string>
-                <string name="add_activity_note_content" >Note Content
-                </string>
                 <string name="confirm_dialog_negative" >Cancel
+                </string>
+                <string name="add_activity_note_content" >Note Content
                 </string>
             </file>
             <file
                 path="/home/arjun/Documents/studybloxx/app/src/main/res/values/dimens.xml"
                 qualifiers="" >
-                <dimen name="tab_host_default_height" >48dp
-                </dimen>
                 <dimen name="activity_horizontal_margin" >16dp
+                </dimen>
+                <dimen name="tab_host_default_height" >48dp
                 </dimen>
                 <dimen name="activity_vertical_margin" >16dp
                 </dimen>
@@ -278,18 +278,18 @@
                 </style>
 
                 <style
-                    name="PopupMenu.Studybloxx"
-                    parent="@android:style/Widget.Holo.ListPopupWindow" >
-                    <item name="android:popupBackground">
-@drawable/menu_dropdown_panel_studybloxx
-                    </item>
-                </style>
-
-                <style
                     name="DropDownListView.Studybloxx"
                     parent="@android:style/Widget.Holo.ListView.DropDown" >
                     <item name="android:listSelector">
 @drawable/selectable_background_studybloxx
+                    </item>
+                </style>
+
+                <style
+                    name="PopupMenu.Studybloxx"
+                    parent="@android:style/Widget.Holo.ListPopupWindow" >
+                    <item name="android:popupBackground">
+@drawable/menu_dropdown_panel_studybloxx
                     </item>
                 </style>
 
@@ -372,6 +372,17 @@
                 </style>
 
                 <style
+                    name="Theme.Studybloxx.Widget"
+                    parent="@android:style/Theme.Holo" >
+                    <item name="android:popupMenuStyle">
+@style/PopupMenu.Studybloxx
+                    </item>
+                    <item name="android:dropDownListViewStyle">
+@style/DropDownListView.Studybloxx
+                    </item>
+                </style>
+
+                <style
                     name="ActionBar.Solid.Studybloxx"
                     parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse" >
                     <item name="android:background">
@@ -385,17 +396,6 @@
                     </item>
                     <item name="android:progressBarStyle">
 @style/ProgressBar.Studybloxx
-                    </item>
-                </style>
-
-                <style
-                    name="Theme.Studybloxx.Widget"
-                    parent="@android:style/Theme.Holo" >
-                    <item name="android:popupMenuStyle">
-@style/PopupMenu.Studybloxx
-                    </item>
-                    <item name="android:dropDownListViewStyle">
-@style/DropDownListView.Studybloxx
                     </item>
                 </style>
             </file>
@@ -447,13 +447,15 @@
                 </string>
                 <string name="app_name" >Studybloxx
                 </string>
+                <string name="authenticator_label" >Studybloxx
+                </string>
                 <string name="action_search" >Search
                 </string>
                 <string name="title_activity_server_config" >Server Configuration
                 </string>
-                <string name="drawer_open" >Open Course List
-                </string>
                 <string name="title_activity_registration_check" >Registration
+                </string>
+                <string name="drawer_open" >Open Course List
                 </string>
                 <string name="app_not_available" > Not Available
                 </string>
@@ -465,23 +467,23 @@
                 </string>
                 <string name="error_invalid_email" >This email address is invalid
                 </string>
-                <string name="prompt_email" >Email
+                <string name="login_progress_signing_in" >Signing in…
                 </string>
                 <string name="action_sign_in_register" >Login
                 </string>
-                <string name="login_progress_signing_in" >Signing in…
-                </string>
-                <string name="prompt_password" >Password
+                <string name="prompt_email" >Email
                 </string>
                 <string name="action_sign_in_short" >Sign in
                 </string>
-                <string name="error_incorrect_password" >This password is incorrect
+                <string name="prompt_password" >Password
                 </string>
                 <string name="action_registration" >Register
                 </string>
-                <string name="title_activity_login" >Login
+                <string name="error_incorrect_password" >This password is incorrect
                 </string>
                 <string name="action_forgot_password" >Recover lost password
+                </string>
+                <string name="title_activity_login" >Login
                 </string>
                 <string name="error_invalid_password" >This password is too short
                 </string>
@@ -1274,6 +1276,16 @@ center
                 path="/home/arjun/Documents/studybloxx/app/src/main/res/layout/activity_server_config.xml"
                 qualifiers=""
                 type="layout" />
+            <file
+                name="authentication_prefs"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/xml/authentication_prefs.xml"
+                qualifiers=""
+                type="xml" />
+            <file
+                name="authenticator"
+                path="/home/arjun/Documents/studybloxx/app/src/main/res/xml/authenticator.xml"
+                qualifiers=""
+                type="xml" />
         </source>
         <source path="/home/arjun/Documents/studybloxx/app/build/res/rs/debug" />
         <source path="/home/arjun/Documents/studybloxx/app/build/res/generated/debug" />

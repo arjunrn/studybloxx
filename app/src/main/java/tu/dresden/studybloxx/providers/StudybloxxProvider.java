@@ -12,13 +12,8 @@ import android.net.Uri;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import tu.dresden.studybloxx.database.StudybloxxDBHelper;
 import tu.dresden.studybloxx.services.UploadService;
-import tu.dresden.studybloxx.utils.Helper;
-import tu.dresden.studybloxx.utils.HttpFetch;
 
 
 public class StudybloxxProvider extends ContentProvider {
@@ -145,32 +140,7 @@ public class StudybloxxProvider extends ContentProvider {
                 Log.d(TAG, "Note ID: " + noteId);
                 SQLiteDatabase database = mDB.getReadableDatabase();
 
-                Cursor noteCursor = database.query(StudybloxxDBHelper.NOTE_TABLE_NAME, new String[]{StudybloxxDBHelper.Contract.Note.URL,
-                        StudybloxxDBHelper.Contract.Note.SYNC_STATUS}, StudybloxxDBHelper.Contract.Note.ID + "=?", new String[]{Long.toString(noteId)}, null, null, null);
-                noteCursor.moveToFirst();
-                String noteUrl = noteCursor.getString(0);
-                boolean courseSynced = noteCursor.getInt(1) == 1 || noteCursor.getInt(2) == 1;
-                if (!courseSynced) {
-                    String noteContents = HttpFetch.get(mServerAddress + noteUrl + "?username=" + Helper.getStoredUserName(getContext())
-                            + "&password=" + Helper.getStoredPassword(getContext()));
-                    try {
-                        JSONObject response = new JSONObject(noteContents);
-                        ContentValues values = new ContentValues();
-                        values.put(StudybloxxDBHelper.Contract.Note.TITLE, response.getString("title"));
-                        values.put(StudybloxxDBHelper.Contract.Note.CONTENT, response.getString("text"));
-                        values.put(StudybloxxDBHelper.Contract.Note.CREATED, response.getLong("created"));
-                        values.put(StudybloxxDBHelper.Contract.Note.UPDATED, response.getLong("updated"));
-                        values.put(StudybloxxDBHelper.Contract.Note.COURSE, response.getLong("course"));
-                        values.put(StudybloxxDBHelper.Contract.Note.SYNC_STATUS, 1);
-                        SQLiteDatabase wdb = mDB.getWritableDatabase();
-                        wdb.update(StudybloxxDBHelper.NOTE_TABLE_NAME, values, StudybloxxDBHelper.Contract.Note.ID + "=?", new String[]{Long.toString(noteId)});
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                }
-
-                noteCursor = database.query(StudybloxxDBHelper.NOTE_TABLE_NAME, projection, StudybloxxDBHelper.Contract.Note.ID + "=? AND "
-                        + StudybloxxDBHelper.Contract.Note.SYNC_STATUS + "=1 ", new String[]{Long.toString(noteId)}, null, null, null);
+                Cursor noteCursor = database.query(StudybloxxDBHelper.NOTE_TABLE_NAME, projection, StudybloxxDBHelper.Contract.Note.ID + "=?", new String[]{Long.toString(noteId)}, null, null, null);
                 noteCursor.setNotificationUri(getContext().getContentResolver(), uri);
                 return noteCursor;
             }

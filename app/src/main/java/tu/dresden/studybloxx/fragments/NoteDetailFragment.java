@@ -98,7 +98,7 @@ public class NoteDetailFragment extends Fragment implements LoaderManager.Loader
             }
             case R.id.discard_note_action: {
                 ContentValues values = new ContentValues(1);
-                values.put(StudybloxxDBHelper.Contract.Note.SYNC_STATUS, 1);
+                values.put(StudybloxxDBHelper.Contract.Note.SYNC_STATUS, StudybloxxDBHelper.Contract.SyncStatus.CLIENT_DELETED);
                 Uri noteUri = ContentUris.withAppendedId(StudybloxxProvider.NOTE_CONTENT_URI, mNoteId);
                 mResolver.update(noteUri, values, null, null);
                 getActivity().finish();

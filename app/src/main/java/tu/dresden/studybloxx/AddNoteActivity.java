@@ -139,7 +139,7 @@ public class AddNoteActivity extends Activity implements LoaderManager.LoaderCal
 			values.put(StudybloxxDBHelper.Contract.Note.TITLE, title);
 			values.put(StudybloxxDBHelper.Contract.Note.CONTENT, content);
 			values.put(StudybloxxDBHelper.Contract.Note.COURSE, courseID);
-			values.put(StudybloxxDBHelper.Contract.Note.SYNC_STATUS, 1);
+			values.put(StudybloxxDBHelper.Contract.Note.SYNC_STATUS, 3);
 			getContentResolver().insert(StudybloxxProvider.NOTE_CONTENT_URI, values);
 		}
 		else

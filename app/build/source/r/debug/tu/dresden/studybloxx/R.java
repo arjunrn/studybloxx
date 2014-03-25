@@ -92,25 +92,25 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int tab_unselected_studybloxx=0x7f02002c;
     }
     public static final class id {
-        public static final int action_add_img=0x7f09001b;
-        public static final int action_cancel_note=0x7f09001a;
-        public static final int action_forgot_password=0x7f09001d;
-        public static final int action_logout=0x7f090025;
-        public static final int action_quick_add_note=0x7f090024;
-        public static final int action_refresh_note=0x7f090023;
-        public static final int action_registration=0x7f09001e;
-        public static final int action_save_note=0x7f09001c;
-        public static final int action_search=0x7f090020;
-        public static final int action_settings=0x7f09001f;
+        public static final int action_add_img=0x7f09001e;
+        public static final int action_cancel_note=0x7f09001d;
+        public static final int action_forgot_password=0x7f090020;
+        public static final int action_logout=0x7f090028;
+        public static final int action_quick_add_note=0x7f090027;
+        public static final int action_refresh_note=0x7f090026;
+        public static final int action_registration=0x7f090021;
+        public static final int action_save_note=0x7f09001f;
+        public static final int action_search=0x7f090023;
+        public static final int action_settings=0x7f090022;
         public static final int add_course_button=0x7f090001;
-        public static final int add_course_input=0x7f090016;
+        public static final int add_course_input=0x7f090019;
         public static final int add_note_content=0x7f090003;
         public static final int add_note_title=0x7f090002;
         public static final int content_frame=0x7f09000c;
-        public static final int course_title=0x7f090019;
-        public static final int discard_note_action=0x7f090021;
+        public static final int course_title=0x7f09001c;
+        public static final int discard_note_action=0x7f090024;
         public static final int drawer_layout=0x7f09000b;
-        public static final int edit_note_action=0x7f090022;
+        public static final int edit_note_action=0x7f090025;
         public static final int email=0x7f090007;
         public static final int lecture_list=0x7f090010;
         public static final int left_drawer=0x7f09000d;
@@ -119,17 +119,20 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int login_status=0x7f090004;
         public static final int login_status_message=0x7f090005;
         public static final int note_course_selector=0x7f090000;
-        public static final int note_detail=0x7f090018;
+        public static final int note_detail=0x7f09001b;
         public static final int note_detail_container=0x7f09000e;
         public static final int note_list_container=0x7f09000f;
-        public static final int note_title=0x7f090017;
+        public static final int note_title=0x7f09001a;
         public static final int password=0x7f090008;
         public static final int reenter_password=0x7f090014;
         public static final int registration_form=0x7f090013;
         public static final int registration_status=0x7f090011;
         public static final int registration_status_message=0x7f090012;
+        public static final int server_config_continue_button=0x7f090017;
+        public static final int server_config_server_addr=0x7f090015;
+        public static final int server_config_use_https=0x7f090016;
         public static final int sign_in_button=0x7f09000a;
-        public static final int studybloxx_settings_fragment=0x7f090015;
+        public static final int studybloxx_settings_fragment=0x7f090018;
     }
     public static final class layout {
         public static final int activity_add_note=0x7f030000;
@@ -175,33 +178,34 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int add_course_title=0x7f06000d;
         public static final int app_name=0x7f06000e;
         public static final int app_not_available=0x7f06000f;
-        public static final int comfirm_dialog_content=0x7f060010;
-        public static final int comfirm_dialog_title=0x7f060011;
-        public static final int confirm_dialog_negative=0x7f060012;
-        public static final int confirm_dialog_positive=0x7f060013;
-        public static final int discard_note_actionbar=0x7f060014;
-        public static final int drawer_close=0x7f060015;
-        public static final int drawer_open=0x7f060016;
-        public static final int edit_note_actionbar=0x7f060017;
-        public static final int error_field_required=0x7f060018;
-        public static final int error_incorrect_password=0x7f060019;
-        public static final int error_invalid_email=0x7f06001a;
-        public static final int error_invalid_password=0x7f06001b;
-        public static final int login_progress_signing_in=0x7f06001c;
-        public static final int menu_logout=0x7f06001d;
-        public static final int menu_quick_add_note=0x7f06001e;
-        public static final int menu_refresh_notes=0x7f06001f;
-        public static final int prompt_email=0x7f060020;
-        public static final int prompt_password=0x7f060021;
-        public static final int prompt_reenter_password=0x7f060022;
-        public static final int title_activity_add_note=0x7f060023;
-        public static final int title_activity_login=0x7f060024;
-        public static final int title_activity_login_check=0x7f060025;
-        public static final int title_activity_main=0x7f060026;
-        public static final int title_activity_registration_check=0x7f060027;
-        public static final int title_activity_server_config=0x7f060028;
-        public static final int title_activity_settings=0x7f060029;
-        public static final int title_lecture_detail=0x7f06002a;
+        public static final int authenticator_label=0x7f060010;
+        public static final int comfirm_dialog_content=0x7f060011;
+        public static final int comfirm_dialog_title=0x7f060012;
+        public static final int confirm_dialog_negative=0x7f060013;
+        public static final int confirm_dialog_positive=0x7f060014;
+        public static final int discard_note_actionbar=0x7f060015;
+        public static final int drawer_close=0x7f060016;
+        public static final int drawer_open=0x7f060017;
+        public static final int edit_note_actionbar=0x7f060018;
+        public static final int error_field_required=0x7f060019;
+        public static final int error_incorrect_password=0x7f06001a;
+        public static final int error_invalid_email=0x7f06001b;
+        public static final int error_invalid_password=0x7f06001c;
+        public static final int login_progress_signing_in=0x7f06001d;
+        public static final int menu_logout=0x7f06001e;
+        public static final int menu_quick_add_note=0x7f06001f;
+        public static final int menu_refresh_notes=0x7f060020;
+        public static final int prompt_email=0x7f060021;
+        public static final int prompt_password=0x7f060022;
+        public static final int prompt_reenter_password=0x7f060023;
+        public static final int title_activity_add_note=0x7f060024;
+        public static final int title_activity_login=0x7f060025;
+        public static final int title_activity_login_check=0x7f060026;
+        public static final int title_activity_main=0x7f060027;
+        public static final int title_activity_registration_check=0x7f060028;
+        public static final int title_activity_server_config=0x7f060029;
+        public static final int title_activity_settings=0x7f06002a;
+        public static final int title_lecture_detail=0x7f06002b;
     }
     public static final class style {
         public static final int ActionBar_Solid_Studybloxx=0x7f070000;
@@ -226,7 +230,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int Theme_Studybloxx_Widget=0x7f07000b;
     }
     public static final class xml {
-        public static final int preferences=0x7f040000;
+        public static final int authentication_prefs=0x7f040000;
+        public static final int authenticator=0x7f040001;
+        public static final int preferences=0x7f040002;
     }
     public static final class styleable {
         /** Attributes that can be used with a TabWidget.

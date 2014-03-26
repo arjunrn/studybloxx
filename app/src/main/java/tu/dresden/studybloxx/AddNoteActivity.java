@@ -4,7 +4,6 @@ import tu.dresden.studybloxx.adapters.CourseCursorAdapter;
 import tu.dresden.studybloxx.database.StudybloxxDBHelper;
 import tu.dresden.studybloxx.providers.StudybloxxProvider;
 import tu.dresden.studybloxx.fragments.AddCourseDialogFragment;
-import tu.dresden.studybloxx.services.UploadService;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.FragmentManager;
@@ -119,8 +118,6 @@ public class AddNoteActivity extends Activity implements LoaderManager.LoaderCal
 				else
 				{
 					saveNote();
-					Intent uploadIntent = new Intent(getApplicationContext(), UploadService.class);
-					startService(uploadIntent);
 					finish();
 				}
 		}

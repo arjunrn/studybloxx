@@ -12,7 +12,6 @@ import android.widget.Toast;
 
 import tu.dresden.studybloxx.fragments.NoteDetailFragment;
 import tu.dresden.studybloxx.fragments.NoteListFragment;
-import tu.dresden.studybloxx.services.SyncService;
 import tu.dresden.studybloxx.utils.Helper;
 
 
@@ -108,8 +107,7 @@ public class NoteListActivity extends NavDrawerActivity implements NoteListFragm
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_refresh_note: {
-                Intent serviceIntent = new Intent(this, SyncService.class);
-                startService(serviceIntent);
+                //TODO: Implement sync with adapter.
                 Toast.makeText(this, "Syncing notes", Toast.LENGTH_SHORT).show();
                 return true;
             }

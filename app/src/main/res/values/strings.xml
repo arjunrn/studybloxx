@@ -20,7 +20,11 @@
     <string name="title_activity_settings">Settings</string>
     <string name="title_activity_server_config">Server Configuration</string>
 
+    <!--Content Provider String -->
+    <string name="provider_authority">tu.dresden.studybloxx.courseprovider</string>
+
     <!-- Authenticator String-->
     <string name="authenticator_label">Studybloxx</string>
+    <string name="account_authority">tu.dresden.studybloxx.server_account</string>
 
 </resources>

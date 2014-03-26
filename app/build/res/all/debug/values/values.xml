@@ -23,6 +23,10 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="tab_host_default_height">48dp</dimen>
+    <!-- From: file:/home/arjun/Documents/studybloxx/app/src/main/res/values/strings.xml -->
+    <eat-comment />
+
+    <string name="account_authority">tu.dresden.studybloxx.server_account</string>
     <!-- From: file:/home/arjun/Documents/studybloxx/app/src/main/res/values/strings_activity_login.xml -->
     <eat-comment />
 
@@ -98,6 +102,7 @@
     <eat-comment />
 
     <string name="prompt_reenter_password">Re-Enter Password</string>
+    <string name="provider_authority">tu.dresden.studybloxx.courseprovider</string>
     <string name="title_activity_add_note">Add Note</string>
     <!-- From: file:/home/arjun/Documents/studybloxx/app/src/main/res/values/strings_activity_login.xml -->
     <eat-comment />

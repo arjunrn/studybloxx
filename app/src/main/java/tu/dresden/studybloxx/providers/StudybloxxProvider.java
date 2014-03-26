@@ -3,7 +3,6 @@ package tu.dresden.studybloxx.providers;
 import android.content.ContentProvider;
 import android.content.ContentUris;
 import android.content.ContentValues;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.UriMatcher;
 import android.database.Cursor;
@@ -13,7 +12,6 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 
 import tu.dresden.studybloxx.database.StudybloxxDBHelper;
-import tu.dresden.studybloxx.services.UploadService;
 
 
 public class StudybloxxProvider extends ContentProvider {
@@ -70,9 +68,6 @@ public class StudybloxxProvider extends ContentProvider {
                 long newCourseId = db.insert(StudybloxxDBHelper.COURSE_TABLE_NAME, null, values);
                 getContext().getContentResolver().notifyChange(COURSE_CONTENT_URI, null);
                 db.close();
-                Intent uploadService = new Intent(getContext(), UploadService.class);
-                getContext().startService(uploadService);
-                Log.d(TAG, "Started Service");
                 return ContentUris.withAppendedId(COURSE_CONTENT_URI, newCourseId);
             }
             case NOTES: {

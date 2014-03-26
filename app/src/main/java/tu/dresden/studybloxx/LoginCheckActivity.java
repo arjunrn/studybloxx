@@ -40,12 +40,12 @@ public class LoginCheckActivity extends Activity {
     @Override
     protected void onStart() {
         super.onStart();
-
-        Account[] accounts = mAccountMan.getAccountsByType(StudybloxxAuthentication.ACCOUNT_TYPE);
+        final String accountType = StudybloxxAuthentication.getAuthority(this);
+        Account[] accounts = mAccountMan.getAccountsByType(accountType);
 
         if (accounts.length == 0) {
 
-            final AccountManagerFuture<Bundle> addResult = mAccountMan.addAccount(StudybloxxAuthentication.ACCOUNT_TYPE, StudybloxxAuthentication.AUTHTOKEN_TYPE_FULL_ACCESS, null, null, null, new AccountManagerCallback<Bundle>() {
+            mAccountMan.addAccount(accountType, StudybloxxAuthentication.AUTHTOKEN_TYPE_FULL_ACCESS, null, null, null, new AccountManagerCallback<Bundle>() {
                 @Override
                 public void run(AccountManagerFuture<Bundle> future) {
                     Bundle result;
@@ -83,7 +83,7 @@ public class LoginCheckActivity extends Activity {
 
 
     private void getAuthToken(Account account) {
-        final AccountManagerFuture<Bundle> authTokenBundle = mAccountMan.getAuthToken(account, StudybloxxAuthentication.AUTHTOKEN_TYPE_FULL_ACCESS, null, null, new AccountManagerCallback<Bundle>() {
+        mAccountMan.getAuthToken(account, StudybloxxAuthentication.AUTHTOKEN_TYPE_FULL_ACCESS, null, null, new AccountManagerCallback<Bundle>() {
             @Override
             public void run(AccountManagerFuture<Bundle> future) {
                 Bundle tokenResult = null;

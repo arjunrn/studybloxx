@@ -17,6 +17,7 @@ public class StudyBloxxClient {
 
     public static void post(String url, RequestParams params,
                             AsyncHttpResponseHandler handler) {
+        Log.d(TAG, "Makind a POST request: " + url);
         client.post(url, params, handler);
     }
 

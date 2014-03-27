@@ -1,6 +1,7 @@
 package tu.dresden.studybloxx.providers;
 
 import android.content.ContentProvider;
+import android.content.ContentResolver;
 import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.SharedPreferences;
@@ -37,6 +38,7 @@ public class StudybloxxProvider extends ContentProvider {
 
     private StudybloxxDBHelper mDB;
     private String mServerAddress;
+    private ContentResolver mContentResolver;
 
 
     public StudybloxxProvider() {
@@ -64,9 +66,8 @@ public class StudybloxxProvider extends ContentProvider {
             case COURSES: {
                 Log.d(TAG, "INSERT INTO COURSES");
                 SQLiteDatabase db = mDB.getWritableDatabase();
-                values.put(StudybloxxDBHelper.Contract.Course.SYNC_STATUS, 0);
                 long newCourseId = db.insert(StudybloxxDBHelper.COURSE_TABLE_NAME, null, values);
-                getContext().getContentResolver().notifyChange(COURSE_CONTENT_URI, null);
+                mContentResolver.notifyChange(COURSE_CONTENT_URI, null);
                 db.close();
                 return ContentUris.withAppendedId(COURSE_CONTENT_URI, newCourseId);
             }
@@ -74,7 +75,7 @@ public class StudybloxxProvider extends ContentProvider {
                 Log.d(TAG, "INSERT INTO NOTES");
                 SQLiteDatabase db = mDB.getWritableDatabase();
                 long newId = db.insert(StudybloxxDBHelper.NOTE_TABLE_NAME, null, values);
-                getContext().getContentResolver().notifyChange(NOTE_CONTENT_URI, null);
+                mContentResolver.notifyChange(NOTE_CONTENT_URI, null);
                 db.close();
                 return ContentUris.withAppendedId(StudybloxxProvider.NOTE_CONTENT_URI, newId);
             }
@@ -106,6 +107,8 @@ public class StudybloxxProvider extends ContentProvider {
         SharedPreferences mPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());
         mServerAddress = "http://" + mPrefs.getString("sync_server_address", "127.0.0.1:8000");
         Log.d(TAG, "Server Address: " + mServerAddress);
+
+        mContentResolver = getContext().getContentResolver();
         return true;
     }
 
@@ -150,8 +153,12 @@ public class StudybloxxProvider extends ContentProvider {
     public int update(Uri uri, ContentValues values, String selection, String[] selectionArgs) {
         switch (mURIMatcher.match(uri)) {
             case COURSES: {
-                // TODO: Implement this to handle requests to update one or more rows.
-                throw new UnsupportedOperationException("Not yet implemented");
+                SQLiteDatabase db = mDB.getWritableDatabase();
+                final int updateCount = db.update(StudybloxxDBHelper.COURSE_TABLE_NAME, values, selection, selectionArgs);
+                Log.d(TAG, "Number of Updated Courses: " + updateCount);
+                db.close();
+                mContentResolver.notifyChange(uri, null);
+                return updateCount;
             }
             case COURSE_ID: {
                 // TODO: Implement this to handle requests to update one or more rows.
@@ -166,7 +173,7 @@ public class StudybloxxProvider extends ContentProvider {
                 long id = Long.parseLong(uri.getLastPathSegment());
                 int updateCount = db.update(StudybloxxDBHelper.NOTE_TABLE_NAME, values, StudybloxxDBHelper.Contract.Note.ID + "=?", new String[]{Long.toString(id)});
                 db.close();
-                getContext().getContentResolver().notifyChange(uri, null);
+                mContentResolver.notifyChange(uri, null);
                 return updateCount;
             }
             default: {

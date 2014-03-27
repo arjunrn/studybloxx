@@ -86,6 +86,8 @@ public class LoginActivity extends AccountAuthenticatorActivity {
 
         public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
             //TODO: Implement a smarted way to extract the CSRF token.
+            Log.d(TAG, "Status Code" + statusCode);
+            Log.d(TAG, "Response Body" + new String(responseBody));
             String token = null;
             for (Header h : headers) {
                 Log.d(TAG, h.getName() + " : " + h.getValue());

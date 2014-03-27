@@ -12,7 +12,7 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import tu.dresden.studybloxx.LoginActivity;
-import tu.dresden.studybloxx.authentication.StudybloxxAuthentication;
+import tu.dresden.studybloxx.R;
 
 /**
  * Created by Arjun Naik<arjun@arjunnaik.in> on 22.03.14.
@@ -113,5 +113,15 @@ public class StudybloxxAuthenticator extends AbstractAccountAuthenticator {
         final Bundle bundle = new Bundle();
         bundle.putBoolean(AccountManager.KEY_BOOLEAN_RESULT, false);
         return bundle;
+    }
+
+    @Override
+    public Bundle getAccountRemovalAllowed(AccountAuthenticatorResponse response, Account account) throws NetworkErrorException {
+        if (mContext.getString(R.string.account_authority).equals(account.type)) {
+            final Bundle result = new Bundle();
+            result.putBoolean(AccountManager.KEY_BOOLEAN_RESULT, true);
+            return result;
+        }
+        return super.getAccountRemovalAllowed(response, account);
     }
 }

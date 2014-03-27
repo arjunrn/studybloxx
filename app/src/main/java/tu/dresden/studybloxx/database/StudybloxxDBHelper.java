@@ -14,7 +14,7 @@ public class StudybloxxDBHelper extends SQLiteOpenHelper {
     public static final String COURSE_TABLE_NAME = "courses";
 
     private static final String CREATE_COURSES_TABLE = "CREATE TABLE " + COURSE_TABLE_NAME + "(" + Contract.Course.ID + " INTEGER PRIMARY KEY, " + Contract.Course.TITLE
-            + " TEXT NOT NULL, " + Contract.Course.URL + " TEXT NOT NULL, " + Contract.Course.SYNC_STATUS + " INTEGER DEFAULT 0)";
+            + " TEXT NOT NULL, " + Contract.Course.URL + " TEXT NOT NULL, " + Contract.Course.SYNC_STATUS + " INTEGER DEFAULT " + Contract.SyncStatus.CREATED + ")";
 
     private static final String DROP_COURSES_TABLE = "DROP TABLE IF EXISTS " + COURSE_TABLE_NAME;
 
@@ -67,6 +67,7 @@ public class StudybloxxDBHelper extends SQLiteOpenHelper {
         }
 
         public interface Course extends Syncable {
+            public static String[] COLUMNS_NEW_COURSE = {ID, TITLE, SYNC_STATUS};
         }
 
         public interface Note extends Syncable {

@@ -10,6 +10,7 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -24,15 +25,25 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.loopj.android.http.AsyncHttpResponseHandler;
-import com.loopj.android.http.RequestParams;
-
 import org.apache.http.Header;
+import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 
 import tu.dresden.studybloxx.authentication.StudybloxxAuthentication;
 import tu.dresden.studybloxx.services.SyncService;
 import tu.dresden.studybloxx.utils.Constants;
-import tu.dresden.studybloxx.utils.StudyBloxxClient;
 
 
 /**
@@ -71,83 +82,35 @@ public class LoginActivity extends AccountAuthenticatorActivity {
     private String mAuthTokenType;
     private String mAccountType;
 
-    AsyncHttpResponseHandler loginCheckHandler = new AsyncHttpResponseHandler() {
-        public void onFailure(int statusCode, org.apache.http.Header[] headers, Throwable error, byte[] responseBody) {
-            Log.e(TAG, "Failed to call the login handler");
-            Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
-            final Bundle data = new Bundle();
-            data.putString(KEY_ERROR_MESSAGE, error.getMessage());
-            final Intent res = new Intent();
-            res.putExtras(data);
-            finishLogin(res);
-            showProgress(false);
-        }
-
-
-        public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-            //TODO: Implement a smarted way to extract the CSRF token.
-            Log.d(TAG, "Status Code" + statusCode);
-            Log.d(TAG, "Response Body" + new String(responseBody));
-            String token = null;
-            for (Header h : headers) {
-                Log.d(TAG, h.getName() + " : " + h.getValue());
-                if (h.getName().equals("Set-Cookie")) {
-                    String[] cookiePairs = h.getValue().split(";");
-                    String[] csrfToken = cookiePairs[0].split("=");
-                    if ("csrftoken".equals(csrfToken[0])) {
-                        token = csrfToken[1];
-                        Log.d(TAG, "CSRF Token: " + token);
-                    }
-                }
-            }
-
-            final Bundle data = new Bundle();
-
-            if (token != null) {
-
-                data.putString(AccountManager.KEY_ACCOUNT_NAME, mEmail);
-                data.putString(AccountManager.KEY_ACCOUNT_TYPE, mAccountType);
-                data.putString(AccountManager.KEY_AUTHTOKEN, token);
-                data.putString(PARAM_USER_PASS, mPassword);
-
-
-            } else {
-                data.putString(KEY_ERROR_MESSAGE, "CSRF Token Not Present");
-            }
-
-            final Intent res = new Intent();
-            res.putExtras(data);
-            finishLogin(res);
-            showProgress(false);
-        }
-
-
-    };
-
     private void finishLogin(Intent intent) {
-        String accountName = intent.getStringExtra(AccountManager.KEY_ACCOUNT_NAME);
-        Log.d(TAG, "Account NAME" + accountName);
-        String accountPassword = intent.getStringExtra(PARAM_USER_PASS);
-        String accountType = intent.getStringExtra(AccountManager.KEY_ACCOUNT_TYPE);
-        Log.d(TAG, "Account Type: " + accountType);
-        final Account account = new Account(accountName, accountType);
-        Log.d(TAG, "Account Name:" + account.name);
-        if (getIntent().getBooleanExtra(ARG_IS_ADDING_NEW_ACCOUNT, false)) {
-            String authToken = intent.getStringExtra(AccountManager.KEY_AUTHTOKEN);
-            String authTokenType = mAuthTokenType;
+        if (!intent.hasExtra(KEY_ERROR_MESSAGE)) {
+            String accountName = intent.getStringExtra(AccountManager.KEY_ACCOUNT_NAME);
+            Log.d(TAG, "Account NAME" + accountName);
+            String accountPassword = intent.getStringExtra(PARAM_USER_PASS);
+            String accountType = intent.getStringExtra(AccountManager.KEY_ACCOUNT_TYPE);
+            Log.d(TAG, "Account Type: " + accountType);
+            final Account account = new Account(accountName, accountType);
+            Log.d(TAG, "Account Name:" + account.name);
+            if (getIntent().getBooleanExtra(ARG_IS_ADDING_NEW_ACCOUNT, false)) {
+                String authToken = intent.getStringExtra(AccountManager.KEY_AUTHTOKEN);
+                String authTokenType = mAuthTokenType;
 
-            // Creating the account on the device and setting the auth token we got
-            // (Not setting the auth token will cause another call to the server to authenticate the user)
-            mAccountManager.addAccountExplicitly(account, accountPassword, null);
-            mAccountManager.setAuthToken(account, authTokenType, authToken);
-            ContentResolver.setSyncAutomatically(account, getString(R.string.provider_authority), true);
+                // Creating the account on the device and setting the auth token we got
+                // (Not setting the auth token will cause another call to the server to authenticate the user)
+                mAccountManager.addAccountExplicitly(account, accountPassword, null);
+                mAccountManager.setAuthToken(account, authTokenType, authToken);
+                ContentResolver.setSyncAutomatically(account, getString(R.string.provider_authority), true);
+            } else {
+                mAccountManager.setPassword(account, accountPassword);
+            }
+
+            setAccountAuthenticatorResult(intent.getExtras());
+            setResult(RESULT_OK, intent);
+            finish();
         } else {
-            mAccountManager.setPassword(account, accountPassword);
+            Toast.makeText(this, intent.getStringExtra(KEY_ERROR_MESSAGE), Toast.LENGTH_SHORT).show();
+            mEmailView.requestFocus();
         }
-
-        setAccountAuthenticatorResult(intent.getExtras());
-        setResult(RESULT_OK, intent);
-        finish();
     }
 
     @Override
@@ -273,12 +236,9 @@ public class LoginActivity extends AccountAuthenticatorActivity {
             // perform the user login attempt.
             mLoginStatusMessageView.setText(R.string.login_progress_signing_in);
             showProgress(true);
-            RequestParams loginParams = new RequestParams();
-            loginParams.add("username", mEmail);
-            loginParams.add("password", mPassword);
-            String loginURL = String.format(Constants.LOGIN_URL, mServerAddress);
-            Log.d(TAG, loginURL);
-            StudyBloxxClient.post(loginURL, loginParams, loginCheckHandler);
+
+            new LoginTask().execute();
+
         }
     }
 
@@ -324,5 +284,114 @@ public class LoginActivity extends AccountAuthenticatorActivity {
                 startActivity(registrationActivity);
         }
         return super.onMenuItemSelected(featureId, item);
+    }
+
+    class LoginReply {
+        boolean result;
+        String response;
+        Exception exception;
+    }
+
+    class LoginTask extends AsyncTask<Void, Void, LoginReply> {
+
+        @Override
+        protected LoginReply doInBackground(Void... voids) {
+            HttpClient httpclient = new DefaultHttpClient();
+            String loginURL = String.format(Constants.LOGIN_URL, mServerAddress);
+            HttpPost httppost = new HttpPost(loginURL);
+            LoginReply reply = new LoginReply();
+            try {
+                // Add your data
+                List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(4);
+                nameValuePairs.add(new BasicNameValuePair("email", mEmail));
+                nameValuePairs.add(new BasicNameValuePair("password", mPassword));
+                nameValuePairs.add(new BasicNameValuePair("keep_logged_in", "true"));
+                nameValuePairs.add(new BasicNameValuePair("mobile", "true"));
+                httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+
+                HttpResponse response = httpclient.execute(httppost);
+
+                StringBuilder sb = new StringBuilder();
+                BufferedReader reader =
+                        new BufferedReader(new InputStreamReader(response.getEntity().getContent()), 65728);
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    sb.append(line);
+                }
+                System.out.println(sb.toString());
+                final Header[] allHeaders = response.getAllHeaders();
+                for (Header h : allHeaders) {
+                    Log.d(TAG, h.getName() + " : " + h.getValue());
+                }
+
+                final Header[] cookieHeaders = response.getHeaders("Set-Cookie");
+                Log.d(TAG, "Number of Cookie Headers: " + cookieHeaders.length);
+
+                String token = null, sessionID = null;
+
+                for (Header h : cookieHeaders) {
+                    Log.d(TAG, h.getName() + " : " + h.getValue());
+                    if (h.getName().equals("Set-Cookie")) {
+                        String[] cookiePairs = h.getValue().split(";");
+                        String[] firstPair = cookiePairs[0].split("=");
+                        if ("csrftoken".equals(firstPair[0])) {
+                            token = firstPair[1];
+                            Log.d(TAG, "CSRF Token: " + token);
+                        }
+                        if ("sessionid".equals(firstPair[0])) {
+                            sessionID = firstPair[1];
+                            Log.d(TAG, "Session ID: " + sessionID);
+                        }
+
+                    }
+                }
+
+                if (token == null || sessionID == null) {
+                    reply.response = "";
+                    reply.result = false;
+                } else {
+                    String tokenResult = String.format("csrftoken=%s; sessionid=%s", token, sessionID);
+                    reply.result = true;
+                    reply.response = tokenResult;
+                }
+
+            } catch (ClientProtocolException e) {
+                e.printStackTrace();
+                reply.result = false;
+                reply.exception = e;
+            } catch (IOException e) {
+                reply.result = false;
+                reply.exception = e;
+            }
+            return reply;
+        }
+
+
+        @Override
+        protected void onPostExecute(LoginReply reply) {
+            super.onPostExecute(reply);
+            final Bundle data = new Bundle();
+
+            if (!reply.result) {
+                if (reply.exception != null) {
+                    Log.e(TAG, "Login Task Failed");
+                    reply.exception.printStackTrace();
+                    Toast.makeText(getApplicationContext(), reply.exception.getMessage(), Toast.LENGTH_SHORT).show();
+                    data.putString(KEY_ERROR_MESSAGE, reply.exception.getMessage());
+                } else {
+                    data.putString(KEY_ERROR_MESSAGE, "Login Successful but no authentication data.");
+                }
+            } else {
+                data.putString(AccountManager.KEY_ACCOUNT_NAME, mEmail);
+                data.putString(AccountManager.KEY_ACCOUNT_TYPE, mAccountType);
+                data.putString(AccountManager.KEY_AUTHTOKEN, reply.response);
+                data.putString(PARAM_USER_PASS, mPassword);
+            }
+
+            final Intent res = new Intent();
+            res.putExtras(data);
+            finishLogin(res);
+            showProgress(false);
+        }
     }
 }

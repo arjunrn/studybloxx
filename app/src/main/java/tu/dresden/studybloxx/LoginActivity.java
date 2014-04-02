@@ -60,12 +60,12 @@ public class LoginActivity extends AccountAuthenticatorActivity {
     public static final String KEY_ERROR_MESSAGE = "ERR_MSG";
 
     public final static String PARAM_USER_PASS = "USER_PASS";
-
     /**
      * The default email to populate the email field with.
      */
     public static final String EXTRA_EMAIL = "com.example.android.authenticatordemo.extra.EMAIL";
     public static final String LOGIN_PREFERENCES = "login_preferences";
+    private static final String PARAM_CSRF_TOKEN = "CSRF_TOKEN";
     private static final String TAG = "LoginActivity";
     // Values for email and password at the time of the login attempt.
     private String mEmail;
@@ -97,7 +97,10 @@ public class LoginActivity extends AccountAuthenticatorActivity {
 
                 // Creating the account on the device and setting the auth token we got
                 // (Not setting the auth token will cause another call to the server to authenticate the user)
-                mAccountManager.addAccountExplicitly(account, accountPassword, null);
+                final Bundle accountBundle = new Bundle();
+                accountBundle.putString(StudybloxxAuthentication.CSRF_TOKEN, intent.getStringExtra(PARAM_CSRF_TOKEN));
+
+                mAccountManager.addAccountExplicitly(account, accountPassword, accountBundle);
                 mAccountManager.setAuthToken(account, authTokenType, authToken);
                 ContentResolver.setSyncAutomatically(account, getString(R.string.provider_authority), true);
             } else {
@@ -288,7 +291,8 @@ public class LoginActivity extends AccountAuthenticatorActivity {
 
     class LoginReply {
         boolean result;
-        String response;
+        String authToken;
+        String csrfToken;
         Exception exception;
     }
 
@@ -347,12 +351,13 @@ public class LoginActivity extends AccountAuthenticatorActivity {
                 }
 
                 if (token == null || sessionID == null) {
-                    reply.response = "";
+                    reply.authToken = "";
                     reply.result = false;
                 } else {
                     String tokenResult = String.format("csrftoken=%s; sessionid=%s", token, sessionID);
                     reply.result = true;
-                    reply.response = tokenResult;
+                    reply.authToken = sessionID;
+                    reply.csrfToken = token;
                 }
 
             } catch (ClientProtocolException e) {
@@ -384,7 +389,8 @@ public class LoginActivity extends AccountAuthenticatorActivity {
             } else {
                 data.putString(AccountManager.KEY_ACCOUNT_NAME, mEmail);
                 data.putString(AccountManager.KEY_ACCOUNT_TYPE, mAccountType);
-                data.putString(AccountManager.KEY_AUTHTOKEN, reply.response);
+                data.putString(AccountManager.KEY_AUTHTOKEN, reply.authToken);
+                data.putString(PARAM_CSRF_TOKEN, reply.csrfToken);
                 data.putString(PARAM_USER_PASS, mPassword);
             }
 

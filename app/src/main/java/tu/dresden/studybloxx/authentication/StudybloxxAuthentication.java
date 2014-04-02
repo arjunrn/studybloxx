@@ -20,6 +20,7 @@ public class StudybloxxAuthentication {
     public static final String AUTHTOKEN_TYPE_READ_ONLY_LABEL = "Read only access to an Studybloxx account";
     public static final String AUTHTOKEN_TYPE_FULL_ACCESS = "Full access";
     public static final String AUTHTOKEN_TYPE_FULL_ACCESS_LABEL = "Full access to an Studybloxx account";
+    public static final String CSRF_TOKEN = "csrf_token";
 
     public static String getAuthority(Context context) {
         return context.getString(R.string.account_authority);

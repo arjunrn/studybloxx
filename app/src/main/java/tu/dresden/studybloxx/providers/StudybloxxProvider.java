@@ -47,8 +47,43 @@ public class StudybloxxProvider extends ContentProvider {
 
     @Override
     public int delete(Uri uri, String selection, String[] selectionArgs) {
-        // Implement this to handle requests to delete one or more rows.
-        throw new UnsupportedOperationException("Not yet implemented");
+        switch (mURIMatcher.match(uri)) {
+            case COURSES: {
+                SQLiteDatabase db = mDB.getWritableDatabase();
+                final int delCount = db.delete(StudybloxxDBHelper.COURSE_TABLE_NAME, selection, selectionArgs);
+                db.close();
+                return delCount;
+            }
+            case NOTES: {
+                SQLiteDatabase db = mDB.getWritableDatabase();
+                final int delCount = db.delete(StudybloxxDBHelper.NOTE_TABLE_NAME, selection, selectionArgs);
+                db.close();
+                return delCount;
+            }
+            case COURSE_ID: {
+                if (selection != null) {
+                    throw new UnsupportedOperationException("Not yet implemented");
+                }
+                SQLiteDatabase db = mDB.getWritableDatabase();
+                final long courseID = ContentUris.parseId(uri);
+                final int delCount = db.delete(StudybloxxDBHelper.COURSE_TABLE_NAME, StudybloxxDBHelper.Contract.Course.ID + "=" + courseID, null);
+                db.close();
+                return delCount;
+            }
+            case NOTE_ID: {
+                if (selection != null) {
+                    throw new UnsupportedOperationException("Not yet implemented");
+                }
+                SQLiteDatabase db = mDB.getWritableDatabase();
+                final long noteID = ContentUris.parseId(uri);
+                final int delCount = db.delete(StudybloxxDBHelper.NOTE_TABLE_NAME, StudybloxxDBHelper.Contract.Note.ID + "=" + noteID, null);
+                db.close();
+                return delCount;
+            }
+            default: {
+                throw new UnsupportedOperationException("Not yet implemented");
+            }
+        }
     }
 
 
@@ -161,8 +196,12 @@ public class StudybloxxProvider extends ContentProvider {
                 return updateCount;
             }
             case COURSE_ID: {
-                // TODO: Implement this to handle requests to update one or more rows.
-                throw new UnsupportedOperationException("Not yet implemented");
+                SQLiteDatabase db = mDB.getWritableDatabase();
+                long courseId = ContentUris.parseId(uri);
+                final int updateCount = db.update(StudybloxxDBHelper.COURSE_TABLE_NAME, values, StudybloxxDBHelper.Contract.Course.ID + "=?", new String[]{Long.toString(courseId)});
+                db.close();
+                mContentResolver.notifyChange(uri, null);
+                return updateCount;
             }
             case NOTES: {
                 // TODO: Implement this to handle requests to update one or more rows.

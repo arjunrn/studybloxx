@@ -3,7 +3,6 @@ package tu.dresden.studybloxx.database;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
 
 public class StudybloxxDBHelper extends SQLiteOpenHelper {
@@ -33,7 +32,6 @@ public class StudybloxxDBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        Log.d(TAG, CREATE_COURSES_TABLE);
         db.execSQL(CREATE_COURSES_TABLE);
         db.execSQL(CREATE_NOTES_TABLE);
     }
@@ -68,11 +66,17 @@ public class StudybloxxDBHelper extends SQLiteOpenHelper {
 
         public interface Course extends Syncable {
             public static String[] COLUMNS_NEW_COURSE = {ID, TITLE, SYNC_STATUS};
+            String[] COLUMNS_MODIFIED_COURSE = {ID, TITLE, SYNC_STATUS, URL};
+            String[] COLUMNS_DELETED_COURSE = {ID, URL};
         }
 
         public interface Note extends Syncable {
             public static String CONTENT = "content";
             public static String COURSE = "course";
+
+            String[] COLUMNS_NEW_NOTE = {ID, TITLE, CONTENT, COURSE, SYNC_STATUS};
+            String[] COLUMNS_MODIFIED_NOTE = {ID, TITLE, CONTENT, URL,SYNC_STATUS};
+            String[] COLUMNS_DELETED_NOTE = {ID, URL};
         }
     }
 

@@ -2,10 +2,9 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EEE" >
+    android:background="#EEE">
 
-    <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -15,17 +14,14 @@
         android:divider="?android:attr/dividerHorizontal"
         android:orientation="horizontal"
         android:showDividers="middle"
-        tools:context=".NoteListActivity" >
+        tools:context=".NoteListActivity">
 
-        <fragment
-            android:id="@+id/lecture_list"
-            android:name="tu.dresden.studybloxx.fragments.NoteListFragment"
+        <FrameLayout
+            android:id="@+id/note_list_container"
             android:layout_width="200dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            tools:context=".LectureListActivity"
-            tools:layout="@layout/fragment_note_list" />
+            android:layout_marginRight="10dp"></FrameLayout>
 
         <FrameLayout
             android:id="@+id/note_detail_container"

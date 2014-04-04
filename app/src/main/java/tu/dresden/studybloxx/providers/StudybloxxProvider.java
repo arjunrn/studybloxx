@@ -204,8 +204,11 @@ public class StudybloxxProvider extends ContentProvider {
                 return updateCount;
             }
             case NOTES: {
-                // TODO: Implement this to handle requests to update one or more rows.
-                throw new UnsupportedOperationException("Not yet implemented");
+                SQLiteDatabase db = mDB.getWritableDatabase();
+                final int updateCount = db.update(StudybloxxDBHelper.NOTE_TABLE_NAME, values, selection, selectionArgs);
+                db.close();
+                mContentResolver.notifyChange(uri, null);
+                return updateCount;
             }
             case NOTE_ID: {
                 SQLiteDatabase db = mDB.getWritableDatabase();

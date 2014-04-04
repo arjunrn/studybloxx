@@ -131,7 +131,7 @@ public class AddNoteActivity extends Activity implements LoaderManager.LoaderCal
             if (!mContent.equals(content)) {
                 values.put(StudybloxxDBHelper.Contract.Note.CONTENT, content);
             }
-            values.put(StudybloxxDBHelper.Contract.Note.SYNC_STATUS, 2);
+            values.put(StudybloxxDBHelper.Contract.Note.SYNC_STATUS, StudybloxxDBHelper.Contract.SyncStatus.MODIFIED);
             getContentResolver().update(ContentUris.withAppendedId(StudybloxxProvider.NOTE_CONTENT_URI, mNoteId), values, StudybloxxDBHelper.Contract.Note.ID + "=?",
                     new String[]{Long.toString(mNoteId)});
         }

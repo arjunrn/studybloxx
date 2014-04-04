@@ -40,7 +40,7 @@ public class LoginCheckActivity extends Activity {
     @Override
     protected void onStart() {
         super.onStart();
-        final String accountType = StudybloxxAuthentication.getAuthority(this);
+        final String accountType = StudybloxxAuthentication.getAccountAuthority(this);
         Account[] accounts = mAccountMan.getAccountsByType(accountType);
 
         if (accounts.length == 0) {

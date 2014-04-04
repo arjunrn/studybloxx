@@ -14,6 +14,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+
 import tu.dresden.studybloxx.database.StudybloxxDBHelper;
 import tu.dresden.studybloxx.providers.StudybloxxProvider;
 import tu.dresden.studybloxx.utils.Constants;
@@ -120,12 +122,56 @@ public class CourseSyncHelper implements StudybloxxSyncAdapter.SyncableHelper {
     }
 
     @Override
-    public String[] compareWithServer(JSONObject results) {
-        return new String[0];
+    public String[] compareWithServer(JSONObject results) throws RemoteException, JSONException {
+        //TODO: Try to do this in pure SQL.
+        final Cursor cursor = mProviderClient.query(StudybloxxProvider.COURSE_CONTENT_URI, new String[]{StudybloxxDBHelper.Contract.Course.URL}, null, null, null);
+        cursor.moveToFirst();
+        final int localCourseCount = cursor.getCount();
+        int count = 0;
+        final String[] localIds = new String[localCourseCount];
+        while (!cursor.isAfterLast()) {
+            localIds[count] = cursor.getString(0);
+            count++;
+            cursor.moveToNext();
+        }
+
+        final JSONArray objsArray = results.getJSONArray("objects");
+        final int remoteCourseCount = objsArray.length();
+        final String[] remoteIds = new String[remoteCourseCount];
+        for (int i = 0; i < remoteCourseCount; i++) {
+            final JSONObject obj = objsArray.getJSONObject(i);
+            remoteIds[i] = obj.getString("resource_uri");
+        }
+
+        ArrayList<String> missingIdsArray = new ArrayList<String>();
+        for (String rid : remoteIds) {
+            boolean found = false;
+            for (String lid : localIds) {
+                if (lid.equals(rid)) {
+                    found = true;
+                }
+            }
+            if (!found) {
+                missingIdsArray.add(rid);
+            }
+        }
+
+        String[] missingIds = new String[missingIdsArray.size()];
+        for (int i = 0; i < missingIdsArray.size(); i++) {
+            missingIds[i] = missingIdsArray.get(i);
+        }
+        return missingIds;
     }
 
     @Override
-    public boolean addNewResourceObjects(JSONObject data) {
-        return false;
+    public boolean addNewResourceObjects(JSONObject data) throws JSONException, RemoteException {
+        final String title = data.getString("course_name");
+        final String uri = data.getString("resource_uri");
+        ContentValues insertValues = new ContentValues(2);
+        insertValues.put(StudybloxxDBHelper.Contract.Course.TITLE, title);
+        insertValues.put(StudybloxxDBHelper.Contract.Course.URL, uri);
+        insertValues.put(StudybloxxDBHelper.Contract.Course.SYNC_STATUS, StudybloxxDBHelper.Contract.SyncStatus.SYNCED);
+        mProviderClient.insert(StudybloxxProvider.COURSE_CONTENT_URI, insertValues);
+        return true;
     }
 }

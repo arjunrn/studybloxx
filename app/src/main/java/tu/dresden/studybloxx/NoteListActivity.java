@@ -1,6 +1,9 @@
 package tu.dresden.studybloxx;
 
+import android.accounts.Account;
+import android.accounts.AccountManager;
 import android.app.ActionBar;
+import android.content.ContentResolver;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
@@ -10,6 +13,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import tu.dresden.studybloxx.authentication.StudybloxxAuthentication;
 import tu.dresden.studybloxx.fragments.NoteDetailFragment;
 import tu.dresden.studybloxx.fragments.NoteListFragment;
 import tu.dresden.studybloxx.utils.Helper;
@@ -32,6 +36,9 @@ public class NoteListActivity extends NavDrawerActivity implements NoteListFragm
      */
     private boolean mTwoPane;
     private ActionBar mActionBar;
+    private Account[] mAccounts;
+    private String mAccountAuthority;
+    private String mProviderAuthority;
 
 
     @Override
@@ -39,17 +46,6 @@ public class NoteListActivity extends NavDrawerActivity implements NoteListFragm
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_note_list);
         setupNavigationDrawer();
-        if (findViewById(R.id.note_detail_container) != null) {
-            // The detail container view will be present only in the
-            // large-screen layouts (res/values-large and
-            // res/values-sw600dp). If this view is present, then the
-            // activity should be in two-pane mode.
-            mTwoPane = true;
-
-            // In two-pane mode, list items should be given the
-            // 'activated' state when touched.
-            ((NoteListFragment) getSupportFragmentManager().findFragmentById(R.id.lecture_list)).setActivateOnItemClick(true);
-        }
 
         mActionBar = getActionBar();
         NoteListFragment noteListFrag;
@@ -64,9 +60,31 @@ public class NoteListActivity extends NavDrawerActivity implements NoteListFragm
             noteListFrag = new NoteListFragment();
         }
 
+        //TODO: Change the implementation so that the list fragment loads automatically through the layout.
+        Log.d(TAG, "Before fragment traction");
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.note_list_container, noteListFrag).commit();
+        mAccountAuthority = StudybloxxAuthentication.getAccountAuthority(this);
+        mProviderAuthority = StudybloxxAuthentication.getProviderAuthority(this);
+        final AccountManager accountManager = AccountManager.get(this);
+        mAccounts = accountManager.getAccountsByType(mAccountAuthority);
+        Log.d(TAG, "Number of accounts with this authority: " + mAccounts.length);
+        for (Account acc : mAccounts) {
+            ContentResolver.setSyncAutomatically(acc, StudybloxxAuthentication.getAccountAuthority(this), true);
+        }
 
+        if (findViewById(R.id.note_detail_container) != null) {
+            // The detail container view will be present only in the
+            // large-screen layouts (res/values-large and
+            // res/values-sw600dp). If this view is present, then the
+            // activity should be in two-pane mode.
+            mTwoPane = true;
+
+            // In two-pane mode, list items should be given the
+            // 'activated' state when touched.
+            //TODO: The following line should be implemented when the preceeding TODO is complemented.
+            //noteListFrag.setActivateOnItemClick(true);
+        }
     }
 
 
@@ -109,6 +127,20 @@ public class NoteListActivity extends NavDrawerActivity implements NoteListFragm
             case R.id.action_refresh_note: {
                 //TODO: Implement sync with adapter.
                 Toast.makeText(this, "Syncing notes", Toast.LENGTH_SHORT).show();
+
+                Bundle bundle = new Bundle();
+                bundle.putBoolean(ContentResolver.SYNC_EXTRAS_MANUAL, true);
+                for (Account acc : mAccounts) {
+//                    Bundle syncBundle = new Bundle();
+//                    syncBundle.putBoolean(ContentResolver.SYNC_EXTRAS_MANUAL, true);
+//                    syncBundle.putBoolean(ContentResolver.SYNC_EXTRAS_EXPEDITED, true);
+//
+////                    SyncRequest.Builder builder = new SyncRequest.Builder();
+////                    builder.setSyncAdapter(acc, mProviderAuthority).setIgnoreBackoff(true).setManual(true).syncOnce().setExpedited(true);
+////                    final SyncRequest request = builder.build();
+////                    ContentResolver.requestSync(request);
+//                    ContentResolver.requestSync(acc, mProviderAuthority, bundle);
+                }
                 return true;
             }
             case R.id.action_quick_add_note: {

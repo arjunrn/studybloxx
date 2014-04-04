@@ -22,7 +22,12 @@ public class StudybloxxAuthentication {
     public static final String AUTHTOKEN_TYPE_FULL_ACCESS_LABEL = "Full access to an Studybloxx account";
     public static final String CSRF_TOKEN = "csrf_token";
 
-    public static String getAuthority(Context context) {
+    public static String getAccountAuthority(Context context) {
         return context.getString(R.string.account_authority);
     }
+
+    public static String getProviderAuthority(Context context) {
+        return context.getString(R.string.provider_authority);
+    }
+
 }

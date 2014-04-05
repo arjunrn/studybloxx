@@ -69,9 +69,7 @@ public class NoteListActivity extends NavDrawerActivity implements NoteListFragm
         final AccountManager accountManager = AccountManager.get(this);
         mAccounts = accountManager.getAccountsByType(mAccountAuthority);
         Log.d(TAG, "Number of accounts with this authority: " + mAccounts.length);
-        for (Account acc : mAccounts) {
-            ContentResolver.setSyncAutomatically(acc, StudybloxxAuthentication.getAccountAuthority(this), true);
-        }
+
 
         if (findViewById(R.id.note_detail_container) != null) {
             // The detail container view will be present only in the
@@ -131,15 +129,15 @@ public class NoteListActivity extends NavDrawerActivity implements NoteListFragm
                 Bundle bundle = new Bundle();
                 bundle.putBoolean(ContentResolver.SYNC_EXTRAS_MANUAL, true);
                 for (Account acc : mAccounts) {
-//                    Bundle syncBundle = new Bundle();
-//                    syncBundle.putBoolean(ContentResolver.SYNC_EXTRAS_MANUAL, true);
-//                    syncBundle.putBoolean(ContentResolver.SYNC_EXTRAS_EXPEDITED, true);
-//
-////                    SyncRequest.Builder builder = new SyncRequest.Builder();
-////                    builder.setSyncAdapter(acc, mProviderAuthority).setIgnoreBackoff(true).setManual(true).syncOnce().setExpedited(true);
-////                    final SyncRequest request = builder.build();
-////                    ContentResolver.requestSync(request);
-//                    ContentResolver.requestSync(acc, mProviderAuthority, bundle);
+                    Bundle syncBundle = new Bundle();
+                    syncBundle.putBoolean(ContentResolver.SYNC_EXTRAS_MANUAL, true);
+                    syncBundle.putBoolean(ContentResolver.SYNC_EXTRAS_EXPEDITED, true);
+
+//                    SyncRequest.Builder builder = new SyncRequest.Builder();
+//                    builder.setSyncAdapter(acc, mProviderAuthority).setIgnoreBackoff(true).setManual(true).syncOnce().setExpedited(true);
+//                    final SyncRequest request = builder.build();
+//                    ContentResolver.requestSync(request);
+                    ContentResolver.requestSync(acc, mProviderAuthority, bundle);
                 }
                 return true;
             }

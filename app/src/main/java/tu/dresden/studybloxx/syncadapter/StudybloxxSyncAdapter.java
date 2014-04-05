@@ -103,99 +103,98 @@ public class StudybloxxSyncAdapter extends AbstractThreadedSyncAdapter {
 
     @Override
     public void onPerformSync(Account account, Bundle bundle, String authority, ContentProviderClient client, SyncResult syncResult) {
-        return;
-//        SyncableHelper[] helpers = new SyncableHelper[]{new CourseSyncHelper(mContext, client), new NoteSyncHelper(mContext, client)};
-//        boolean uploadOnly = bundle.getBoolean(ContentResolver.SYNC_EXTRAS_UPLOAD);
-//        Log.d(TAG, "Upload Only: " + uploadOnly);
-//
-//        HttpClient httpclient = new DefaultHttpClient();
-//
-//
-//        try {
-//
-//            final String authToken = mAccountMan.blockingGetAuthToken(account, StudybloxxAuthentication.AUTHTOKEN_TYPE_FULL_ACCESS, true);
-//            Log.d(TAG, "Auth Token: " + authToken);
-//
-//            final String csrfToken = mAccountMan.getUserData(account, StudybloxxAuthentication.CSRF_TOKEN);
-//            Log.d(TAG, "CSRF TOKEN: " + csrfToken);
-//
-//            for (SyncableHelper helper : helpers) {
-//                final String endPoint = helper.getResourceEndpoint();
-//                final NewResource[] newObjs = helper.getNewResourceObjects();
-//
-//                for (NewResource obj : newObjs) {
-//                    HttpRequestBase request = getRequest(RequestType.HTTP_POST, csrfToken, authToken, endPoint, obj.resourceJSON.toString());
-//                    HttpResponse response = httpclient.execute(request);
-//                    //getResponseBody(response);
-//                    final Header[] allHeaders = response.getAllHeaders();
-//                    URL resourceURL = null;
-//                    for (Header h : allHeaders) {
-//                        Log.d(TAG, h.getName() + " : " + h.getValue());
-//                        if (CREATED_LOCATION_HEADER.equals(h.getName())) {
-//                            resourceURL = new URL(h.getValue());
-//                            Log.d(TAG, "Location: " + resourceURL.getPath());
-//                        }
-//                    }
-//
-//                    if (response.getStatusLine().getStatusCode() == 201 && resourceURL.getPath() != null) {
-//                        helper.setUploaded(obj.localId, resourceURL.getPath());
-//                        Log.d(TAG, "Successfuly informed server");
-//                    } else {
-//                        Log.e(TAG, "Server upload of course failed");
-//                    }
-//                }
-//
-//
-//                final JSONArray modifiedArray = helper.getModifiedResourceObject();
-//                final JSONArray deletedArray = helper.getDeletedResourceUris();
-//
-//                Log.d(TAG, "Number of Modified Objects: " + modifiedArray.length());
-//                Log.d(TAG, "Number of Deleted Objects: " + deletedArray.length());
-//
-//                if (modifiedArray.length() != 0 || deletedArray.length() != 0) {
-//                    JSONObject patchJSON = new JSONObject();
-//                    patchJSON.put("objects", modifiedArray);
-//                    patchJSON.put("deleted_objects", deletedArray);
-//                    final HttpRequestBase request = getRequest(RequestType.HTTP_PATCH, csrfToken, authToken, endPoint, patchJSON.toString());
-//                    HttpResponse response = httpclient.execute(request);
-//                    //getResponseBody(response);
-//                    if (response.getStatusLine().getStatusCode() == 202) {
-//                        helper.setAllModifiedSynced();
-//                        Log.d(TAG, "Successfuly informed server of modifications and deletions");
-//                    } else {
-//                        Log.e(TAG, "Server patch of deleted and uploaded courses failed");
-//                    }
-//                }
-//
-//                //TODO: Account for pagination. Should there be a limit to the number of resources requested.
-//                final HttpRequestBase request = getRequest(RequestType.HTTP_GET, csrfToken, authToken, endPoint, null);
-//                HttpResponse response = httpclient.execute(request);
-//                final String list = getResponseBody(response);
-//                final JSONObject listJSON = new JSONObject(list);
-//                final String[] resourceURIs = helper.compareWithServer(listJSON);
-//                Log.d(TAG, "Number of missing resources :" + resourceURIs.length);
-//
-//                //TODO: Shorten this request so that all resources are request together.
-//                for (String uri : resourceURIs) {
-//                    final HttpRequestBase getRequest = getRequest(RequestType.HTTP_GET, csrfToken, authToken, mServerAddress + uri, null);
-//                    HttpResponse resourceResponse = httpclient.execute(getRequest);
-//                    final String objectResponse = getResponseBody(resourceResponse);
-//                    final boolean addResult = helper.addNewResourceObjects(new JSONObject(objectResponse));
-//                    Log.d(TAG, "Result of fetching: " + addResult);
-//                }
-//            }
-//
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//        } catch (RemoteException e) {
-//            e.printStackTrace();
-//        } catch (OperationCanceledException e) {
-//            e.printStackTrace();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        } catch (AuthenticatorException e) {
-//            e.printStackTrace();
-//        }
+        SyncableHelper[] helpers = new SyncableHelper[]{new CourseSyncHelper(mContext, client), new NoteSyncHelper(mContext, client)};
+        boolean uploadOnly = bundle.getBoolean(ContentResolver.SYNC_EXTRAS_UPLOAD);
+        Log.d(TAG, "Upload Only: " + uploadOnly);
+
+        HttpClient httpclient = new DefaultHttpClient();
+
+
+        try {
+
+            final String authToken = mAccountMan.blockingGetAuthToken(account, StudybloxxAuthentication.AUTHTOKEN_TYPE_FULL_ACCESS, true);
+            Log.d(TAG, "Auth Token: " + authToken);
+
+            final String csrfToken = mAccountMan.getUserData(account, StudybloxxAuthentication.CSRF_TOKEN);
+            Log.d(TAG, "CSRF TOKEN: " + csrfToken);
+
+            for (SyncableHelper helper : helpers) {
+                final String endPoint = helper.getResourceEndpoint();
+                final NewResource[] newObjs = helper.getNewResourceObjects();
+
+                for (NewResource obj : newObjs) {
+                    HttpRequestBase request = getRequest(RequestType.HTTP_POST, csrfToken, authToken, endPoint, obj.resourceJSON.toString());
+                    HttpResponse response = httpclient.execute(request);
+                    //getResponseBody(response);
+                    final Header[] allHeaders = response.getAllHeaders();
+                    URL resourceURL = null;
+                    for (Header h : allHeaders) {
+                        Log.d(TAG, h.getName() + " : " + h.getValue());
+                        if (CREATED_LOCATION_HEADER.equals(h.getName())) {
+                            resourceURL = new URL(h.getValue());
+                            Log.d(TAG, "Location: " + resourceURL.getPath());
+                        }
+                    }
+
+                    if (response.getStatusLine().getStatusCode() == 201 && resourceURL.getPath() != null) {
+                        helper.setUploaded(obj.localId, resourceURL.getPath());
+                        Log.d(TAG, "Successfuly informed server");
+                    } else {
+                        Log.e(TAG, "Server upload of course failed");
+                    }
+                }
+
+
+                final JSONArray modifiedArray = helper.getModifiedResourceObject();
+                final JSONArray deletedArray = helper.getDeletedResourceUris();
+
+                Log.d(TAG, "Number of Modified Objects: " + modifiedArray.length());
+                Log.d(TAG, "Number of Deleted Objects: " + deletedArray.length());
+
+                if (modifiedArray.length() != 0 || deletedArray.length() != 0) {
+                    JSONObject patchJSON = new JSONObject();
+                    patchJSON.put("objects", modifiedArray);
+                    patchJSON.put("deleted_objects", deletedArray);
+                    final HttpRequestBase request = getRequest(RequestType.HTTP_PATCH, csrfToken, authToken, endPoint, patchJSON.toString());
+                    HttpResponse response = httpclient.execute(request);
+                    //getResponseBody(response);
+                    if (response.getStatusLine().getStatusCode() == 202) {
+                        helper.setAllModifiedSynced();
+                        Log.d(TAG, "Successfuly informed server of modifications and deletions");
+                    } else {
+                        Log.e(TAG, "Server patch of deleted and uploaded courses failed");
+                    }
+                }
+
+                //TODO: Account for pagination. Should there be a limit to the number of resources requested.
+                final HttpRequestBase request = getRequest(RequestType.HTTP_GET, csrfToken, authToken, endPoint, null);
+                HttpResponse response = httpclient.execute(request);
+                final String list = getResponseBody(response);
+                final JSONObject listJSON = new JSONObject(list);
+                final String[] resourceURIs = helper.compareWithServer(listJSON);
+                Log.d(TAG, "Number of missing resources :" + resourceURIs.length);
+
+                //TODO: Shorten this request so that all resources are request together.
+                for (String uri : resourceURIs) {
+                    final HttpRequestBase getRequest = getRequest(RequestType.HTTP_GET, csrfToken, authToken, mServerAddress + uri, null);
+                    HttpResponse resourceResponse = httpclient.execute(getRequest);
+                    final String objectResponse = getResponseBody(resourceResponse);
+                    final boolean addResult = helper.addNewResourceObjects(new JSONObject(objectResponse));
+                    Log.d(TAG, "Result of fetching: " + addResult);
+                }
+            }
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        } catch (OperationCanceledException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (AuthenticatorException e) {
+            e.printStackTrace();
+        }
 
     }
 

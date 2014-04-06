@@ -11,6 +11,7 @@
     <!-- Registration Activity String -->
     <string name="title_activity_registration_check">Registration</string>
     <string name="prompt_reenter_password">Re-Enter Password</string>
+    <string name="server_address">Server address without http</string>
     <string name="title_activity_add_note">Add Note</string>
 
     <!-- Navigation Drawer Strings -->

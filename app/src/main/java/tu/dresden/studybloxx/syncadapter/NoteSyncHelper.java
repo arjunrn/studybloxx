@@ -105,9 +105,9 @@ public class NoteSyncHelper implements StudybloxxSyncAdapter.SyncableHelper {
         if (modifiedCount > 0) {
             modifiedNoteCusor.moveToFirst();
             while (!modifiedNoteCusor.isAfterLast()) {
-                modifiedNoteCusor.moveToNext();
                 final String uri = modifiedNoteCusor.getString(1);
                 modifiedArray.put(uri);
+                modifiedNoteCusor.moveToNext();
             }
         }
         return modifiedArray;

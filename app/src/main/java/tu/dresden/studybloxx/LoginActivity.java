@@ -279,6 +279,7 @@ public class LoginActivity extends AccountAuthenticatorActivity {
         protected LoginReply doInBackground(Void... voids) {
             HttpClient httpclient = new DefaultHttpClient();
             String loginURL = String.format(Constants.LOGIN_URL, mServerAddress);
+            Log.d(TAG, "Login URL: " + loginURL);
             HttpPost httppost = new HttpPost(loginURL);
             LoginReply reply = new LoginReply();
             try {

@@ -19,7 +19,7 @@
 
 <resources>
 
-    <style name="Theme.Studybloxx" parent="@android:style/Theme.Holo.Light.DarkActionBar">
+    <style name="Theme.Studybloxx" parent="@style/AppBaseTheme">
         <item name="android:actionBarItemBackground">@drawable/selectable_background_studybloxx</item>
         <item name="android:popupMenuStyle">@style/PopupMenu.Studybloxx</item>
         <item name="android:dropDownListViewStyle">@style/DropDownListView.Studybloxx</item>
@@ -29,7 +29,6 @@
         <item name="android:actionModeBackground">@drawable/cab_background_top_studybloxx</item>
         <item name="android:actionModeSplitBackground">@drawable/cab_background_bottom_studybloxx</item>
         <item name="android:actionModeCloseButtonStyle">@style/ActionButton.CloseMode.Studybloxx</item>
-        
                 <!-- Light.DarkActionBar specific -->
         <item name="android:actionBarWidgetTheme">@style/Theme.Studybloxx.Widget</item>
 

@@ -45,7 +45,7 @@ public class NoteDetailActivity extends FragmentActivity
 			arguments.putLong(NoteDetailFragment.ARG_ITEM_ID, extras.getLong(NoteDetailFragment.ARG_ITEM_ID));
 			NoteDetailFragment fragment = new NoteDetailFragment();
 			fragment.setArguments(arguments);
-			getSupportFragmentManager().beginTransaction().add(R.id.note_detail_container, fragment).commit();
+			getFragmentManager().beginTransaction().add(R.id.note_detail_container, fragment).commit();
 		}
 	}
 

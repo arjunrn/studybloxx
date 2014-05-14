@@ -3,10 +3,10 @@ package tu.dresden.studybloxx;
 import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.app.ActionBar;
+import android.app.FragmentManager;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -62,7 +62,7 @@ public class NoteListActivity extends NavDrawerActivity implements NoteListFragm
 
         //TODO: Change the implementation so that the list fragment loads automatically through the layout.
         Log.d(TAG, "Before fragment traction");
-        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentManager fragmentManager = getFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.note_list_container, noteListFrag).commit();
         mAccountAuthority = StudybloxxAuthentication.getAccountAuthority(this);
         mProviderAuthority = StudybloxxAuthentication.getProviderAuthority(this);
@@ -99,7 +99,7 @@ public class NoteListActivity extends NavDrawerActivity implements NoteListFragm
             arguments.putLong(NoteDetailFragment.ARG_ITEM_ID, noteId);
             NoteDetailFragment fragment = new NoteDetailFragment();
             fragment.setArguments(arguments);
-            getSupportFragmentManager().beginTransaction().replace(R.id.note_detail_container, fragment).commit();
+            getFragmentManager().beginTransaction().replace(R.id.note_detail_container, fragment).commit();
 
         } else {
             // In single-pane mode, simply start the detail activity

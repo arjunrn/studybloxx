@@ -7,7 +7,6 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.content.ContentResolver;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
@@ -18,7 +17,6 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
@@ -42,7 +40,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import tu.dresden.studybloxx.authentication.StudybloxxAuthentication;
-import tu.dresden.studybloxx.services.SyncService;
 import tu.dresden.studybloxx.utils.Constants;
 
 
@@ -81,40 +78,7 @@ public class LoginActivity extends AccountAuthenticatorActivity {
     private AccountManager mAccountManager;
     private String mAuthTokenType;
     private String mAccountType;
-
-    private void finishLogin(Intent intent) {
-        if (!intent.hasExtra(KEY_ERROR_MESSAGE)) {
-            String accountName = intent.getStringExtra(AccountManager.KEY_ACCOUNT_NAME);
-            Log.d(TAG, "Account NAME" + accountName);
-            String accountPassword = intent.getStringExtra(PARAM_USER_PASS);
-            String accountType = intent.getStringExtra(AccountManager.KEY_ACCOUNT_TYPE);
-            Log.d(TAG, "Account Type: " + accountType);
-            final Account account = new Account(accountName, accountType);
-            Log.d(TAG, "Account Name:" + account.name);
-            if (getIntent().getBooleanExtra(ARG_IS_ADDING_NEW_ACCOUNT, false)) {
-                String authToken = intent.getStringExtra(AccountManager.KEY_AUTHTOKEN);
-                String authTokenType = mAuthTokenType;
-
-                // Creating the account on the device and setting the auth token we got
-                // (Not setting the auth token will cause another call to the server to authenticate the user)
-                final Bundle accountBundle = new Bundle();
-                accountBundle.putString(StudybloxxAuthentication.CSRF_TOKEN, intent.getStringExtra(PARAM_CSRF_TOKEN));
-
-                mAccountManager.addAccountExplicitly(account, accountPassword, accountBundle);
-                mAccountManager.setAuthToken(account, authTokenType, authToken);
-                ContentResolver.setSyncAutomatically(account, getString(R.string.provider_authority), true);
-            } else {
-                mAccountManager.setPassword(account, accountPassword);
-            }
-
-            setAccountAuthenticatorResult(intent.getExtras());
-            setResult(RESULT_OK, intent);
-            finish();
-        } else {
-            Toast.makeText(this, intent.getStringExtra(KEY_ERROR_MESSAGE), Toast.LENGTH_SHORT).show();
-            mEmailView.requestFocus();
-        }
-    }
+    private EditText mServerAddressView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -122,30 +86,15 @@ public class LoginActivity extends AccountAuthenticatorActivity {
 
         setContentView(R.layout.activity_login);
 
-        mLoginPreferences = getSharedPreferences(LOGIN_PREFERENCES, Context.MODE_PRIVATE);
-
-        String storedUsername = mLoginPreferences.getString(Constants.STUDYBLOXX_USERNAME, null);
-        String storedPassword = mLoginPreferences.getString(Constants.STUDYBLOXX_PASSWORD, null);
-
-        if (storedUsername != null && storedPassword != null) {
-            Toast.makeText(this, "Logged In", Toast.LENGTH_SHORT).show();
-
-            Intent syncService = new Intent(this, SyncService.class);
-            //startService(syncService);
-
-            Intent lectureListIntent = new Intent(this, NoteListActivity.class);
-            startActivity(lectureListIntent);
-            finish();
-            return;
-        }
-
         // Set up the login form.
         mEmail = getIntent().getStringExtra(EXTRA_EMAIL);
         mEmailView = (EditText) findViewById(R.id.email);
         mEmailView.setText(mEmail);
 
         mPasswordView = (EditText) findViewById(R.id.password);
-        mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+
+        mServerAddressView = (EditText) findViewById(R.id.server_address);
+        mServerAddressView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
                 if (id == R.id.login || id == EditorInfo.IME_NULL) {
@@ -166,9 +115,6 @@ public class LoginActivity extends AccountAuthenticatorActivity {
                 attemptLogin();
             }
         });
-
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        mServerAddress = prefs.getString("sync_server_address", Constants.STUDYBLOXX_DEFAULT_SERVER_ADDRESS);
 
         mAccountManager = AccountManager.get(getBaseContext());
 
@@ -200,10 +146,12 @@ public class LoginActivity extends AccountAuthenticatorActivity {
         // Reset errors.
         mEmailView.setError(null);
         mPasswordView.setError(null);
+        mServerAddressView.setError(null);
 
         // Store values at the time of the login attempt.
         mEmail = mEmailView.getText().toString();
         mPassword = mPasswordView.getText().toString();
+        mServerAddress = mServerAddressView.getText().toString();
 
         boolean cancel = false;
         View focusView = null;
@@ -228,6 +176,11 @@ public class LoginActivity extends AccountAuthenticatorActivity {
             mEmailView.setError(getString(R.string.error_invalid_email));
             focusView = mEmailView;
             cancel = true;
+        }
+
+        //TODO: Implemented better checks for valid server address
+        if (TextUtils.isEmpty(mServerAddress)) {
+            mServerAddressView.setError("This field is required");
         }
 
         if (cancel) {
@@ -279,14 +232,38 @@ public class LoginActivity extends AccountAuthenticatorActivity {
         }
     }
 
-    @Override
-    public boolean onMenuItemSelected(int featureId, MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_registration:
-                Intent registrationActivity = new Intent(this, RegistrationActivity.class);
-                startActivity(registrationActivity);
+    private void finishLogin(Intent intent) {
+        if (!intent.hasExtra(KEY_ERROR_MESSAGE)) {
+            String accountName = intent.getStringExtra(AccountManager.KEY_ACCOUNT_NAME);
+            Log.d(TAG, "Account NAME" + accountName);
+            String accountPassword = intent.getStringExtra(PARAM_USER_PASS);
+            String accountType = intent.getStringExtra(AccountManager.KEY_ACCOUNT_TYPE);
+            Log.d(TAG, "Account Type: " + accountType);
+            final Account account = new Account(accountName, accountType);
+            Log.d(TAG, "Account Name:" + account.name);
+            if (getIntent().getBooleanExtra(ARG_IS_ADDING_NEW_ACCOUNT, false)) {
+                String authToken = intent.getStringExtra(AccountManager.KEY_AUTHTOKEN);
+                String authTokenType = mAuthTokenType;
+
+                // Creating the account on the device and setting the auth token we got
+                // (Not setting the auth token will cause another call to the server to authenticate the user)
+                final Bundle accountBundle = new Bundle();
+                accountBundle.putString(StudybloxxAuthentication.CSRF_TOKEN, intent.getStringExtra(PARAM_CSRF_TOKEN));
+
+                mAccountManager.addAccountExplicitly(account, accountPassword, accountBundle);
+                mAccountManager.setAuthToken(account, authTokenType, authToken);
+                ContentResolver.setSyncAutomatically(account, getString(R.string.provider_authority), true);
+            } else {
+                mAccountManager.setPassword(account, accountPassword);
+            }
+
+            setAccountAuthenticatorResult(intent.getExtras());
+            setResult(RESULT_OK, intent);
+            finish();
+        } else {
+            Toast.makeText(this, intent.getStringExtra(KEY_ERROR_MESSAGE), Toast.LENGTH_SHORT).show();
+            mEmailView.requestFocus();
         }
-        return super.onMenuItemSelected(featureId, item);
     }
 
     class LoginReply {
@@ -354,7 +331,6 @@ public class LoginActivity extends AccountAuthenticatorActivity {
                     reply.authToken = "";
                     reply.result = false;
                 } else {
-                    String tokenResult = String.format("csrftoken=%s; sessionid=%s", token, sessionID);
                     reply.result = true;
                     reply.authToken = sessionID;
                     reply.csrfToken = token;
@@ -393,6 +369,11 @@ public class LoginActivity extends AccountAuthenticatorActivity {
                 data.putString(PARAM_CSRF_TOKEN, reply.csrfToken);
                 data.putString(PARAM_USER_PASS, mPassword);
             }
+
+            final SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(LoginActivity.this);
+            final SharedPreferences.Editor sharedEdit = sharedPrefs.edit();
+            sharedEdit.putString("sync_server_address", mServerAddress);
+            sharedEdit.commit();
 
             final Intent res = new Intent();
             res.putExtras(data);

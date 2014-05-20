@@ -136,22 +136,35 @@ public class StudybloxxSyncAdapter extends AbstractThreadedSyncAdapter {
                         }
                     }
 
-                    if (response.getStatusLine().getStatusCode() == 201 && resourceURL.getPath() != null) {
+                    final int statusCode = response.getStatusLine().getStatusCode();
+                    Log.e(TAG, "Status code: " + statusCode);
+
+                    if (statusCode == 201 && resourceURL.getPath() != null) {
                         helper.setUploaded(obj.localId, resourceURL.getPath());
                         Log.d(TAG, "Successfuly informed server");
+                        syncResult.stats.numInserts++;
+                    } else if (statusCode == 401) {
+                        Log.i(TAG, "Server token expired");
+                        mAccountMan.invalidateAuthToken(account.type, authToken);
+                        syncResult.stats.numAuthExceptions++;
+                        continue;
+
                     } else {
                         Log.e(TAG, "Server upload of course failed");
+                        syncResult.stats.numParseExceptions++;
+                        continue;
                     }
                 }
 
 
                 final JSONArray modifiedArray = helper.getModifiedResourceObject();
                 final JSONArray deletedArray = helper.getDeletedResourceUris();
+                final int modifiedItems = modifiedArray.length();
+                final int deletedItems = deletedArray.length();
+                Log.d(TAG, "Number of Modified Objects: " + modifiedItems);
+                Log.d(TAG, "Number of Deleted Objects: " + deletedItems);
 
-                Log.d(TAG, "Number of Modified Objects: " + modifiedArray.length());
-                Log.d(TAG, "Number of Deleted Objects: " + deletedArray.length());
-
-                if (modifiedArray.length() != 0 || deletedArray.length() != 0) {
+                if (modifiedItems != 0 || deletedItems != 0) {
                     JSONObject patchJSON = new JSONObject();
                     patchJSON.put("objects", modifiedArray);
                     patchJSON.put("deleted_objects", deletedArray);
@@ -160,27 +173,43 @@ public class StudybloxxSyncAdapter extends AbstractThreadedSyncAdapter {
                     //getResponseBody(response);
                     if (response.getStatusLine().getStatusCode() == 202) {
                         helper.setAllModifiedSynced();
+                        syncResult.stats.numUpdates += modifiedItems;
+                        syncResult.stats.numDeletes += deletedItems;
                         Log.d(TAG, "Successfuly informed server of modifications and deletions");
                     } else {
+                        syncResult.stats.numSkippedEntries = syncResult.stats.numSkippedEntries + modifiedItems + deletedItems;
                         Log.e(TAG, "Server patch of deleted and uploaded courses failed");
                     }
                 }
 
                 //TODO: Account for pagination. Should there be a limit to the number of resources requested.
-                final HttpRequestBase request = getRequest(RequestType.HTTP_GET, csrfToken, authToken, endPoint, null);
-                HttpResponse response = httpclient.execute(request);
-                final String list = getResponseBody(response);
-                final JSONObject listJSON = new JSONObject(list);
-                final String[] resourceURIs = helper.compareWithServer(listJSON);
-                Log.d(TAG, "Number of missing resources :" + resourceURIs.length);
+                if (!uploadOnly) {
+                    final HttpRequestBase request = getRequest(RequestType.HTTP_GET, csrfToken, authToken, endPoint, null);
+                    HttpResponse response = httpclient.execute(request);
+                    if (response.getStatusLine().getStatusCode() != 200) {
+                        mAccountMan.invalidateAuthToken(account.type, authToken);
+                        syncResult.stats.numAuthExceptions++;
+                        continue;
+                    }
+                    final String list = getResponseBody(response);
+                    final JSONObject listJSON = new JSONObject(list);
+                    final String[] resourceURIs = helper.compareWithServer(listJSON);
+                    Log.d(TAG, "Number of missing resources :" + resourceURIs.length);
 
-                //TODO: Shorten this request so that all resources are request together.
-                for (String uri : resourceURIs) {
-                    final HttpRequestBase getRequest = getRequest(RequestType.HTTP_GET, csrfToken, authToken, mServerAddress + uri, null);
-                    HttpResponse resourceResponse = httpclient.execute(getRequest);
-                    final String objectResponse = getResponseBody(resourceResponse);
-                    final boolean addResult = helper.addNewResourceObjects(new JSONObject(objectResponse));
-                    Log.d(TAG, "Result of fetching: " + addResult);
+                    //TODO: Shorten this request so that all resources are request together.
+                    for (String uri : resourceURIs) {
+                        final HttpRequestBase getRequest = getRequest(RequestType.HTTP_GET, csrfToken, authToken, mServerAddress + uri, null);
+                        HttpResponse resourceResponse = httpclient.execute(getRequest);
+                        if (resourceResponse.getStatusLine().getStatusCode() != 200) {
+                            Log.e(TAG, "Could not fetch missing resources from server.");
+                            syncResult.stats.numConflictDetectedExceptions++;
+                            syncResult.stats.numAuthExceptions++;
+                            continue;
+                        }
+                        final String objectResponse = getResponseBody(resourceResponse);
+                        final boolean addResult = helper.addNewResourceObjects(new JSONObject(objectResponse));
+                        Log.d(TAG, "Result of fetching: " + addResult);
+                    }
                 }
             }
 

@@ -40,6 +40,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import tu.dresden.studybloxx.authentication.StudybloxxAuthentication;
+import tu.dresden.studybloxx.utils.AuthTokenFetcher;
 import tu.dresden.studybloxx.utils.Constants;
 
 
@@ -266,91 +267,19 @@ public class LoginActivity extends AccountAuthenticatorActivity {
         }
     }
 
-    class LoginReply {
-        boolean result;
-        String authToken;
-        String csrfToken;
-        Exception exception;
-    }
 
-    class LoginTask extends AsyncTask<Void, Void, LoginReply> {
+
+    class LoginTask extends AsyncTask<Void, Void, AuthTokenFetcher.LoginReply> {
 
         @Override
-        protected LoginReply doInBackground(Void... voids) {
-            HttpClient httpclient = new DefaultHttpClient();
-            String loginURL = String.format(Constants.LOGIN_URL, mServerAddress);
-            Log.d(TAG, "Login URL: " + loginURL);
-            HttpPost httppost = new HttpPost(loginURL);
-            LoginReply reply = new LoginReply();
-            try {
-                // Add your data
-                List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(4);
-                nameValuePairs.add(new BasicNameValuePair("email", mEmail));
-                nameValuePairs.add(new BasicNameValuePair("password", mPassword));
-                nameValuePairs.add(new BasicNameValuePair("keep_logged_in", "true"));
-                nameValuePairs.add(new BasicNameValuePair("mobile", "true"));
-                httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
-
-                HttpResponse response = httpclient.execute(httppost);
-
-                StringBuilder sb = new StringBuilder();
-                BufferedReader reader =
-                        new BufferedReader(new InputStreamReader(response.getEntity().getContent()), 65728);
-                String line;
-                while ((line = reader.readLine()) != null) {
-                    sb.append(line);
-                }
-                System.out.println(sb.toString());
-                final Header[] allHeaders = response.getAllHeaders();
-                for (Header h : allHeaders) {
-                    Log.d(TAG, h.getName() + " : " + h.getValue());
-                }
-
-                final Header[] cookieHeaders = response.getHeaders("Set-Cookie");
-                Log.d(TAG, "Number of Cookie Headers: " + cookieHeaders.length);
-
-                String token = null, sessionID = null;
-
-                for (Header h : cookieHeaders) {
-                    Log.d(TAG, h.getName() + " : " + h.getValue());
-                    if (h.getName().equals("Set-Cookie")) {
-                        String[] cookiePairs = h.getValue().split(";");
-                        String[] firstPair = cookiePairs[0].split("=");
-                        if ("csrftoken".equals(firstPair[0])) {
-                            token = firstPair[1];
-                            Log.d(TAG, "CSRF Token: " + token);
-                        }
-                        if ("sessionid".equals(firstPair[0])) {
-                            sessionID = firstPair[1];
-                            Log.d(TAG, "Session ID: " + sessionID);
-                        }
-
-                    }
-                }
-
-                if (token == null || sessionID == null) {
-                    reply.authToken = "";
-                    reply.result = false;
-                } else {
-                    reply.result = true;
-                    reply.authToken = sessionID;
-                    reply.csrfToken = token;
-                }
-
-            } catch (ClientProtocolException e) {
-                e.printStackTrace();
-                reply.result = false;
-                reply.exception = e;
-            } catch (IOException e) {
-                reply.result = false;
-                reply.exception = e;
-            }
-            return reply;
+        protected AuthTokenFetcher.LoginReply doInBackground(Void... voids) {
+            AuthTokenFetcher fetcher = new AuthTokenFetcher(mServerAddress,mEmail,mPassword);
+            return fetcher.getToken();
         }
 
 
         @Override
-        protected void onPostExecute(LoginReply reply) {
+        protected void onPostExecute(AuthTokenFetcher.LoginReply reply) {
             super.onPostExecute(reply);
             final Bundle data = new Bundle();
 

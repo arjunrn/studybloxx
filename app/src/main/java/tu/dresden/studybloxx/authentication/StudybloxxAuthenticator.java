@@ -7,12 +7,16 @@ import android.accounts.AccountManager;
 import android.accounts.NetworkErrorException;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.util.Log;
 
 import tu.dresden.studybloxx.LoginActivity;
 import tu.dresden.studybloxx.R;
+import tu.dresden.studybloxx.utils.AuthTokenFetcher;
+import tu.dresden.studybloxx.utils.Constants;
 
 /**
  * Created by Arjun Naik<arjun@arjunnaik.in> on 22.03.14.
@@ -66,30 +70,35 @@ public class StudybloxxAuthenticator extends AbstractAccountAuthenticator {
 
         if (TextUtils.isEmpty(authToken)) {
             final String password = accountManager.getPassword(account);
+            final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(mContext);
+            String serverAddress = prefs.getString("sync_server_address", Constants.STUDYBLOXX_DEFAULT_SERVER_ADDRESS);
             if (password != null) {
-                //TODO: Obtain authToken from server.
+                AuthTokenFetcher fetcher = new AuthTokenFetcher(serverAddress, account.name, password);
+                final AuthTokenFetcher.LoginReply token = fetcher.getToken();
+                if(token.result){
+                    authToken = token.authToken;
+                }
             }
         }
 
         if (!TextUtils.isEmpty(authToken)) {
-            Log.d(TAG, "Auth Token is empty");
+            Log.d(TAG, "Auth Token is not empty");
             returnBundle.putString(AccountManager.KEY_ACCOUNT_NAME, account.name);
             returnBundle.putString(AccountManager.KEY_ACCOUNT_TYPE, account.type);
             returnBundle.putString(AccountManager.KEY_AUTHTOKEN, authToken);
             return returnBundle;
         }
 
-        Log.d(TAG, "Need to put intent for Login");
+        Log.e(TAG, "Need to put intent for Login");
 
         final Intent authenticationIntent = new Intent(mContext, LoginActivity.class);
         authenticationIntent.putExtra(AccountManager.KEY_ACCOUNT_AUTHENTICATOR_RESPONSE, accountAuthenticatorResponse);
         authenticationIntent.putExtra(LoginActivity.ARG_ACCOUNT_TYPE, account.type);
         authenticationIntent.putExtra(LoginActivity.ARG_ACCOUNT_NAME, account.name);
         authenticationIntent.putExtra(LoginActivity.ARG_AUTH_TYPE, authTokenType);
-
         returnBundle.putParcelable(AccountManager.KEY_INTENT, authenticationIntent);
 
-        return null;
+        return returnBundle;
     }
 
     @Override

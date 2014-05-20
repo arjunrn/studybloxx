@@ -199,14 +199,14 @@ public abstract class NavDrawerActivity extends Activity implements LoaderManage
     @Override
     public void onLoadFinished(Loader<Cursor> arg0, Cursor arg1) {
         Log.d(TAG, "Number of Courses: " + arg1.getCount());
-        CursorAdapter adapter = (CursorAdapter) mDrawerList.getAdapter();
+        CourseCursorAdapter adapter = (CourseCursorAdapter) mDrawerList.getAdapter();
         adapter.swapCursor(arg1);
     }
 
 
     @Override
     public void onLoaderReset(Loader<Cursor> arg0) {
-        CursorAdapter adapter = (CursorAdapter) mDrawerList.getAdapter();
+        CourseCursorAdapter adapter = (CourseCursorAdapter) mDrawerList.getAdapter();
         adapter.swapCursor(null);
     }
 

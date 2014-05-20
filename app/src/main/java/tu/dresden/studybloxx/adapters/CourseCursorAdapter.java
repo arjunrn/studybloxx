@@ -2,6 +2,7 @@ package tu.dresden.studybloxx.adapters;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +15,8 @@ import tu.dresden.studybloxx.R;
 public class CourseCursorAdapter extends CursorAdapter
 {
 
-	private LayoutInflater mInflater;
+    private static final String TAG = "CourseCursorAdapter";
+    private LayoutInflater mInflater;
 
 
 	public CourseCursorAdapter(Context context, Cursor c, int flags)
@@ -28,6 +30,7 @@ public class CourseCursorAdapter extends CursorAdapter
 	public void bindView(View arg0, Context arg1, Cursor arg2)
 	{
 		TextView courseTitle = (TextView) arg0.findViewById(R.id.course_title);
+        Log.d(TAG, "Course Title: " + arg2.getString(1));
 		courseTitle.setText(arg2.getString(1));
 	}
 

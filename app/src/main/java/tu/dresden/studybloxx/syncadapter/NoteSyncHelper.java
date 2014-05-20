@@ -9,6 +9,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.RemoteException;
 import android.preference.PreferenceManager;
+import android.util.Log;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -25,6 +26,7 @@ import tu.dresden.studybloxx.utils.Constants;
  */
 public class NoteSyncHelper implements StudybloxxSyncAdapter.SyncableHelper {
 
+    private static final String TAG = "NoteSyncHelper";
     private final String mServerAddress;
     private final ContentProviderClient mProviderClient;
 
@@ -134,6 +136,7 @@ public class NoteSyncHelper implements StudybloxxSyncAdapter.SyncableHelper {
 
     @Override
     public String[] compareWithServer(JSONObject results) throws RemoteException, JSONException {
+        Log.d(TAG, results.toString());
         final Cursor cursor = mProviderClient.query(StudybloxxProvider.NOTE_CONTENT_URI, new String[]{StudybloxxDBHelper.Contract.Note.URL}, null, null, null);
         cursor.moveToFirst();
         final int localNoteCount = cursor.getCount();
